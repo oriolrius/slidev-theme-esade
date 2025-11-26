@@ -1,0 +1,32 @@
+{
+  "name": "slidev-theme-esade",
+  "version": "1.0.0",
+  "description": "ESADE branded theme for Slidev presentations",
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "esade"
+  ],
+  "author": "Oriol Rius",
+  "license": "MIT",
+  "homepage": "https://github.com/oriolrius/slidev-theme-esade",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oriolrius/slidev-theme-esade"
+  },
+  "slidev": {
+    "colorSchema": "light",
+    "highlighter": "shiki"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "slidev": ">=0.47.0"
+  },
+  "files": [
+    "styles",
+    "public",
+    "layouts",
+    "components",
+    "setup"
+  ]
+}
