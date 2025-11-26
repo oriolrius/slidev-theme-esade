@@ -199,6 +199,20 @@ Run the presentation:
 npm run dev
 ```
 
+## Brand Guidelines
+
+See [ESADE_BRANDBOOK.md](./ESADE_BRANDBOOK.md) for the complete ESADE brand guidelines including:
+
+- Brand colors with hex values
+- Typography specifications
+- Logo usage guidelines
+- Design principles
+- Accessibility requirements
+
+## Demo
+
+Check [example.md](./example.md) for a complete presentation demonstrating all theme features.
+
 ## License
 
 MIT
