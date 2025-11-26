@@ -80,31 +80,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
   border-bottom: 3px solid var(--esade-kumera);
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
 }
 
 h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
   color: var(--esade-electric-blue);
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
 p, li {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 1.6;
-  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
 }
 
 /* Links */
@@ -169,7 +174,7 @@ blockquote {
 }
 
 blockquote p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin: 0;
 }
 
@@ -218,21 +223,21 @@ tr:hover {
 }
 
 .slidev-layout.cover h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .slidev-layout.cover h2 {
-  font-size: 2.2rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
   opacity: 0.95;
 }
 
 .slidev-layout.cover p,
 .slidev-layout.cover div {
   color: var(--esade-white) !important;
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  margin-top: 0.4rem;
   opacity: 0.9;
 }
 
@@ -267,7 +272,7 @@ tr:hover {
 
 .slidev-layout.section h1 {
   color: var(--esade-white);
-  font-size: 4rem;
+  font-size: 2.8rem;
   position: relative;
 }
 
@@ -316,8 +321,8 @@ tr:hover {
 }
 
 .slidev-layout.quote blockquote {
-  font-size: 2.5rem;
-  border-left: 8px solid var(--esade-kumera);
+  font-size: 1.5rem;
+  border-left: 6px solid var(--esade-kumera);
   background: transparent;
   color: var(--esade-navy);
   max-width: 80%;
@@ -440,11 +445,19 @@ tr:hover {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p, li {
+    font-size: 0.9rem;
   }
 
   .slidev-layout.two-cols {
