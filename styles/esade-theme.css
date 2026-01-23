@@ -74,7 +74,7 @@
   color: var(--esade-black);
   font-family: 'Mabry Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  padding: 2rem 2.5rem;
+  padding: 4rem 5rem 5rem 5rem; /* Extra bottom padding for footer (page numbers) */
 }
 
 /* Typography */
@@ -84,37 +84,43 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--esade-navy);
 }
 
+.slidev-layout h1,
 h1 {
-  font-size: 2.2rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  font-size: 4.5rem !important;
+  line-height: 1.15;
+  margin-bottom: 2rem;
   letter-spacing: -0.02em;
 }
 
+.slidev-layout h2,
 h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.8rem;
-  border-bottom: 3px solid var(--esade-kumera);
-  padding-bottom: 0.4rem;
+  font-size: 2.8rem !important;
+  margin-bottom: 1.5rem;
+  border-bottom: 4px solid var(--esade-kumera);
+  padding-bottom: 0.6rem;
 }
 
+.slidev-layout h3,
 h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.6rem;
+  font-size: 2.2rem !important;
+  margin-bottom: 1rem;
   color: var(--esade-electric-blue);
 }
 
+.slidev-layout h4,
 h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem !important;
+  margin-bottom: 0.8rem;
 }
 
+.slidev-layout p,
+.slidev-layout li,
 p, li {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 1rem;
+  font-size: 1.8rem !important;
   font-weight: 400;
   line-height: 1.5;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Links */
@@ -134,25 +140,26 @@ a:hover {
 code {
   background-color: var(--code-bg);
   color: var(--code-text);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 1.5rem;
   font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 
 pre {
   background-color: var(--code-bg) !important;
-  border-left: 4px solid var(--esade-kumera);
-  padding: 1rem 1.25rem;
-  border-radius: 8px;
+  border-left: 6px solid var(--esade-kumera);
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
   overflow-x: auto;
 }
 
 pre code {
   background-color: transparent;
   color: var(--code-text);
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  padding: 0;
 }
 
 /* Slidev/Shiki code block overrides */
@@ -182,11 +189,11 @@ pre.slidev-code,
 
 /* Lists */
 ul, ol {
-  margin-left: 2rem;
+  margin-left: 3rem;
 }
 
 li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
 li::marker {
@@ -213,20 +220,30 @@ blockquote p {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 2rem 0;
+  margin: 1rem 0;
+  font-size: 1.4rem;
 }
 
 th {
   background-color: var(--esade-navy);
   color: var(--esade-white);
-  padding: 1rem;
+  padding: 0.6rem 1rem;
   text-align: left;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 td {
-  padding: 0.8rem 1rem;
+  padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--esade-light-gray);
+  font-size: 1.4rem;
+}
+
+/* Code inside table cells - lighter style for readability */
+td code {
+  background-color: var(--esade-navy) !important;
+  color: #fff !important;
+  padding: 0.2rem 0.5rem !important;
+  font-size: 1.2rem !important;
 }
 
 tr:hover {
@@ -292,30 +309,58 @@ tr:hover {
 
 /* Section Layout */
 .slidev-layout.section {
-  background: var(--esade-navy);
-  color: var(--esade-white);
-  display: flex;
+  background: linear-gradient(135deg, var(--esade-navy) 0%, #001a3a 100%) !important;
+  color: var(--esade-white) !important;
+  display: flex !important;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
+  height: 100%;
+  min-height: 100%;
+  padding: 4rem;
 }
 
 .slidev-layout.section h1 {
-  color: var(--esade-white);
-  font-size: 2.8rem;
+  color: var(--esade-white) !important;
+  font-size: 3.5rem !important;
+  margin-bottom: 1rem;
   position: relative;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .slidev-layout.section h1::after {
   content: '';
   position: absolute;
-  bottom: -20px;
+  bottom: -16px;
   left: 50%;
   transform: translateX(-50%);
-  width: 200px;
+  width: 120px;
   height: 4px;
   background: var(--esade-kumera);
+  border-radius: 2px;
+}
+
+.slidev-layout.section p {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 1.5rem !important;
+  margin-top: 2rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.slidev-layout.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg,
+    var(--esade-kumera) 0%,
+    var(--esade-electric-blue) 50%,
+    var(--esade-emerald) 100%);
 }
 
 /* Center Layout */
@@ -511,18 +556,334 @@ tr:hover {
   }
 }
 
-/* Footer with ESADE branding */
-.slidev-layout::after {
-  content: 'Do Good. Do Better.';
-  position: absolute;
-  bottom: 20px;
-  right: 30px;
-  font-size: 0.8rem;
-  color: var(--esade-medium-gray);
-  font-style: italic;
+/* Page numbers are now handled by global-bottom.vue */
+
+/* ============================================
+   CALLOUT BOXES (CTL-Style)
+   ============================================ */
+
+/* Warning Callout - Cream/Beige background */
+.callout-warning {
+  background: #FFF8E1;
+  border-left: 4px solid #FF9800;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
 }
 
-.slidev-layout.cover::after,
-.slidev-layout.section::after {
-  content: none;
+.callout-warning::before {
+  content: '\26A0\FE0F';
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.callout-warning h4,
+.callout-warning strong:first-child {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--esade-navy);
+  margin: 0 0 0.25rem 0;
+  display: block;
+}
+
+.callout-warning p {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Info Callout - Light Blue background */
+.callout-info {
+  background: #E3EAF6;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.callout-info::before {
+  content: '\1F4AC';
+  font-size: 1rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.callout-info p {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.callout-info strong {
+  font-weight: 700;
+  color: var(--esade-navy);
+}
+
+/* Tip Callout - Light Green background */
+.callout-tip {
+  background: rgba(78, 205, 196, 0.15);
+  border-left: 6px solid var(--esade-emerald);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.callout-tip::before {
+  content: '\1F4A1';
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.callout-tip p {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Inline code inside callouts - ensure contrast */
+.callout-tip code,
+.callout-info code,
+.callout-warning code,
+.callout-note code,
+.callout-secure code,
+.callout-tip p code,
+.callout-info p code,
+.callout-warning p code,
+.callout-note p code,
+.callout-secure p code {
+  background-color: rgba(0, 46, 93, 0.95) !important;
+  color: #ffffff !important;
+  padding: 0.2rem 0.5rem !important;
+  border-radius: 4px !important;
+  font-size: 1.4rem !important;
+}
+
+/* Note Callout - Light Purple/Lavender background */
+.callout-note {
+  background: #F3E8FF;
+  border-left: 4px solid #9333EA;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.callout-note::before {
+  content: '\1F4DD';
+  font-size: 1rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.callout-note p {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Lock/Security Callout */
+.callout-secure {
+  background: #FFF8E1;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.callout-secure::before {
+  content: '\1F512';
+  font-size: 1rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.callout-secure p {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================
+   ICON-ON-LINE SEPARATOR COMPONENT
+   ============================================ */
+
+.icon-rule-separator {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.icon-rule-separator .line {
+  flex: 1;
+  height: 2px;
+  background: var(--esade-navy);
+}
+
+.icon-rule-separator .icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--esade-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0 0.5rem;
+  color: white;
+}
+
+.icon-rule-separator .icon-circle svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ============================================
+   STEP NUMBER CIRCLES
+   ============================================ */
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--esade-navy);
+  color: white;
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-number.small {
+  width: 32px;
+  height: 32px;
+  font-size: 0.9rem;
+}
+
+.step-number.large {
+  width: 64px;
+  height: 64px;
+  font-size: 1.5rem;
+}
+
+.step-number.gold {
+  background: var(--esade-kumera);
+}
+
+.step-number.blue {
+  background: var(--esade-electric-blue);
+}
+
+/* ============================================
+   FEATURE CARDS
+   ============================================ */
+
+.feature-card {
+  background: var(--esade-light-gray, #F5F5F5);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.feature-card h3 {
+  font-family: 'ESADE', 'Mabry Pro', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--esade-navy);
+  margin: 0 0 0.75rem 0;
+}
+
+.feature-card p {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================
+   IMAGE CARD WITH OVERLAY
+   ============================================ */
+
+.image-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.image-card .image-container {
+  position: relative;
+  height: 180px;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  color: white;
+  padding: 1rem;
+}
+
+.image-card .overlay h4 {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+}
+
+.image-card .overlay .meta {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.image-card .content {
+  padding: 1rem;
+}
+
+.image-card .content p {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0 0 0.75rem 0;
+}
+
+.image-card .content a {
+  color: var(--esade-navy);
+  font-weight: 600;
+  text-decoration: underline;
 }

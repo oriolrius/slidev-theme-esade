@@ -1,13 +1,13 @@
 # slidev-theme-esade
 
-ESADE branded theme for [Slidev](https://sli.dev) presentations, based on the ESADE Brand Book 2025.
+ESADE branded theme for [Slidev](https://sli.dev) presentations, based on the ESADE Brand Book 2025 and CTL design guidelines.
 
 ## Features
 
 - ESADE brand colors (Navy, Kumera gold, Electric Blue, etc.)
 - Custom ESADE and Mabry Pro fonts
-- Styled layouts: cover, section, center, two-cols, quote
-- Custom CSS classes for boxes, buttons, and badges
+- 11 styled layouts for various presentation needs
+- Custom CSS classes for boxes, buttons, badges, and callouts
 - Responsive design with print support
 - Gradient progress bar and branded footer
 
@@ -48,7 +48,11 @@ title: My ESADE Presentation
 
 ## Available Layouts
 
-### Cover
+### Basic Layouts
+
+#### Cover (CSS-styled)
+
+Navy gradient background, centered content.
 
 ```md
 ---
@@ -62,7 +66,9 @@ layout: cover
 Your Name
 ```
 
-### Section
+#### Section (CSS-styled)
+
+Navy background section divider.
 
 ```md
 ---
@@ -72,7 +78,7 @@ layout: section
 # Section Title
 ```
 
-### Two Columns
+#### Two Columns (CSS-styled)
 
 ```md
 ---
@@ -90,7 +96,7 @@ Content here
 Content here
 ```
 
-### Center
+#### Center (CSS-styled)
 
 ```md
 ---
@@ -100,15 +106,270 @@ layout: center
 # Centered Content
 ```
 
+#### Quote (CSS-styled)
+
+```md
+---
+layout: quote
+---
+
+> "Your inspiring quote here."
+```
+
+---
+
+### Advanced Layouts (Vue Components)
+
+#### Cover Split
+
+50/50 split with image on one side and content on the other. Perfect for title slides.
+
+```md
+---
+layout: cover-split
+image: /path/to/image.jpg
+imagePosition: left
+---
+
+# Main Title
+
+## Subtitle
+
+A hands-on workshop description text goes here.
+```
+
+Props:
+- `image`: Path to hero image (optional, shows gradient if not provided)
+- `imagePosition`: `'left'` (default) or `'right'`
+
+#### Four Grid
+
+2×2 quadrant layout with icon separators. Great for "Key Considerations" slides.
+
+```md
+---
+layout: four-grid
+---
+
+::title::
+# Key Considerations for This Workshop
+
+::q1::
+### Part of AI Literacy Strategy
+This session is part of the commitment to AI literacy.
+
+::q2::
+### Responding to Student Practices
+Students already use these tools.
+
+::q3::
+### Learning by Experimentation
+The aim is exploration, not mastery.
+
+::q4::
+### Responsible Use
+Careful and responsible use is essential.
+
+::callout::
+<div class="callout-warning">
+<strong>Our Recommendation:</strong> Work only with open-access materials.
+</div>
+```
+
+Slots: `title`, `q1`, `q2`, `q3`, `q4`, `callout`, `icon1`-`icon4`
+
+#### Compare
+
+Side-by-side comparison layout, perfect for Do's/Don'ts.
+
+```md
+---
+layout: compare
+leftTitle: "DO's - Practical uses"
+rightTitle: "DON'Ts - Mistakes to avoid"
+leftColor: green
+rightColor: red
+---
+
+::title::
+# Do's & Don'ts
+
+::intro::
+Used well, this supports learning materials.
+
+::left::
+- Discussion questions and prompts
+- Teaching cases and extensions
+- Concept maps and tables
+- Flashcards and quizzes
+
+::right::
+- Don't upload proprietary materials
+- Don't use for grading
+- Don't replace discussion
+- Don't assume critical usage
+
+::takeaway::
+<div class="callout-info">
+<strong>Key takeaway:</strong> This supports preparation—judgment remains human.
+</div>
+```
+
+Props:
+- `leftTitle`, `rightTitle`: Column headers
+- `leftColor`: `'green'` (default) or `'blue'`
+- `rightColor`: `'red'` (default) or `'orange'`
+
+#### Hero Cards
+
+Full-width hero banner with 3 feature cards below.
+
+```md
+---
+layout: hero-cards
+heroImage: /path/to/hero.jpg
+heroHeight: 200px
+---
+
+::title::
+# NotebookLM
+
+::card1::
+### 1. Source-grounded learning
+Build AI-generated resources strictly from materials.
+
+::card2::
+### 2. Visual Impact
+Turn static documents into study guides, podcasts, summaries.
+
+::card3::
+### 3. Teaching-centered AI support
+Use AI as a pedagogical assistant.
+
+::footer::
+This represents a new approach to teaching with AI.
+```
+
+Props:
+- `heroImage`: Path to hero image
+- `heroHeight`: Height of hero banner (default: `'200px'`)
+
+#### Cards Grid
+
+Grid of image cards with descriptions. Great for use cases/examples.
+
+```md
+---
+layout: cards-grid
+columns: 2
+---
+
+::title::
+# Example Use Cases
+
+::intro::
+Browse featured notebooks to review concrete examples.
+
+::card1::
+<div class="card-image">
+  <img src="/example1.jpg" />
+  <div class="overlay">
+    <span class="source">The Economist</span>
+    <h4>The World Ahead 2025</h4>
+    <span class="meta">70 sources · Jul 7, 2025</span>
+  </div>
+</div>
+<div class="card-content">
+  <p>Tracking new developments in markets, science, technology...</p>
+</div>
+<div class="card-link">
+  <a href="#">Open the Notebook and Explore</a>
+</div>
+
+::card2::
+<div class="card-image">
+  <img src="/example2.jpg" />
+  <div class="overlay">
+    <h4>Earnings Reports</h4>
+    <span class="meta">267 sources</span>
+  </div>
+</div>
+<div class="card-content">
+  <p>Dive deep into the <strong>state of the global economy</strong>.</p>
+</div>
+<div class="card-link">
+  <a href="#">Open the Notebook and Explore</a>
+</div>
+```
+
+Props:
+- `columns`: `2` (default) or `3`
+
+#### Infographic
+
+Full-width layout for diagrams and infographics.
+
+```md
+---
+layout: infographic
+background: cream
+---
+
+::title::
+# NotebookLM Studio: Transform Your Sources
+
+::subtitle::
+Studio offers features that transform your documents into various formats.
+
+<img src="/infographic.png" />
+
+::brand::
+<span>NotebookLM</span>
+```
+
+Props:
+- `background`: `'white'`, `'cream'` (default), `'light-blue'`, `'light-gray'`
+
+---
+
 ## Custom CSS Classes
 
-### Accent Boxes
+### Accent Boxes (Original)
 
 ```html
 <div class="esade-box info">Info box content</div>
 <div class="esade-box success">Success box content</div>
 <div class="esade-box warning">Warning box content</div>
 <div class="esade-box highlight">Highlight box content</div>
+```
+
+### Callout Boxes (CTL-Style)
+
+```html
+<!-- Warning - Cream/beige with orange border -->
+<div class="callout-warning">
+  <strong>Warning Title:</strong> Your warning message here.
+</div>
+
+<!-- Info - Light blue background -->
+<div class="callout-info">
+  <strong>Key takeaway:</strong> Important information here.
+</div>
+
+<!-- Tip - Light green background -->
+<div class="callout-tip">
+  <p>Helpful tip or suggestion here.</p>
+</div>
+
+<!-- Note - Light purple background -->
+<div class="callout-note">
+  <p>Additional note or reference.</p>
+</div>
+
+<!-- Secure/Lock - For security-related content -->
+<div class="callout-secure">
+  <strong>Closing note:</strong> Security or privacy message.
+</div>
 ```
 
 ### Buttons
@@ -126,6 +387,44 @@ layout: center
 <span class="esade-badge blue">Blue</span>
 <span class="esade-badge coral">Coral</span>
 ```
+
+### Step Numbers
+
+```html
+<span class="step-number">1</span>
+<span class="step-number small">2</span>
+<span class="step-number large gold">3</span>
+<span class="step-number blue">4</span>
+```
+
+### Feature Cards
+
+```html
+<div class="feature-card">
+  <h3>Card Title</h3>
+  <p>Card description text.</p>
+</div>
+```
+
+### Image Cards
+
+```html
+<div class="image-card">
+  <div class="image-container">
+    <img src="/image.jpg" />
+    <div class="overlay">
+      <h4>Card Title</h4>
+      <span class="meta">Additional info</span>
+    </div>
+  </div>
+  <div class="content">
+    <p>Description text.</p>
+    <a href="#">Link text</a>
+  </div>
+</div>
+```
+
+---
 
 ## Brand Colors
 
