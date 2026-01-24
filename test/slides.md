@@ -328,8 +328,10 @@ Supports **Font Awesome**!
 
 ---
 layout: compare
-leftTitle: "Check title"
-rightTitle: "Cross title"
+leftTitle: "Cross title"
+rightTitle: "Check title"
+leftColor: red
+rightColor: green
 ---
 
 ::title::
@@ -339,34 +341,34 @@ rightTitle: "Cross title"
 Side-by-side comparison for Do's/Don'ts or pros/cons. Customize via props and icon slots.
 
 ::leftIcon::
-<i class="fas fa-check"></i>
+<i class="fas fa-xmark"></i>
 
 ::rightIcon::
-<i class="fas fa-xmark"></i>
+<i class="fas fa-check"></i>
 
 ::left::
 ### Frontmatter Props
 ```yaml
 layout: compare
-leftTitle: "DO's"
-rightTitle: "DON'Ts"
-leftColor: green   # or blue
-rightColor: red    # or orange
+leftTitle: "DON'Ts"
+rightTitle: "DO's"
+leftColor: red     # or orange
+rightColor: green  # or blue
 ```
 
 ::right::
 ### Icon Slots
 ```html
 ::leftIcon::
-<i class="fas fa-check"></i>
+<i class="fas fa-xmark"></i>
 
 ::rightIcon::
-<i class="fas fa-xmark"></i>
+<i class="fas fa-check"></i>
 ```
 
 ::takeaway::
 <div class="callout-info">
-<p><strong>Defaults:</strong> leftColor=green, rightColor=red. Icons: ✓ checkmark, ✗ cross</p>
+<p><strong>Defaults:</strong> leftColor=red, rightColor=green. Icons: ✗ cross (left), ✓ checkmark (right)</p>
 </div>
 
 ---

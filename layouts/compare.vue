@@ -2,8 +2,8 @@
 defineProps<{
   leftTitle?: string
   rightTitle?: string
-  leftColor?: 'green' | 'blue'
-  rightColor?: 'red' | 'orange'
+  leftColor?: 'red' | 'orange'
+  rightColor?: 'green' | 'blue'
 }>()
 </script>
 
@@ -21,31 +21,12 @@ defineProps<{
 
     <!-- Comparison Columns -->
     <div class="compare-grid">
-      <!-- Left Column (DO's / Positive) -->
-      <div class="compare-column left" :class="leftColor || 'green'">
+      <!-- Left Column (DON'Ts / Negative) -->
+      <div class="compare-column left" :class="leftColor || 'red'">
         <div class="icon-rule">
           <span class="line"></span>
           <span class="icon-circle">
             <slot name="leftIcon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-            </slot>
-          </span>
-          <span class="line"></span>
-        </div>
-        <h3 class="column-title">{{ leftTitle || "DO's - Practical uses that add value" }}</h3>
-        <div class="column-content">
-          <slot name="left" />
-        </div>
-      </div>
-
-      <!-- Right Column (DON'Ts / Negative) -->
-      <div class="compare-column right" :class="rightColor || 'red'">
-        <div class="icon-rule">
-          <span class="line"></span>
-          <span class="icon-circle">
-            <slot name="rightIcon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                 <line x1="18" y1="6" x2="6" y2="18"/>
                 <line x1="6" y1="6" x2="18" y2="18"/>
@@ -54,7 +35,26 @@ defineProps<{
           </span>
           <span class="line"></span>
         </div>
-        <h3 class="column-title">{{ rightTitle || "DON'Ts - Common mistakes to avoid" }}</h3>
+        <h3 class="column-title">{{ leftTitle || "DON'Ts - Common mistakes to avoid" }}</h3>
+        <div class="column-content">
+          <slot name="left" />
+        </div>
+      </div>
+
+      <!-- Right Column (DO's / Positive) -->
+      <div class="compare-column right" :class="rightColor || 'green'">
+        <div class="icon-rule">
+          <span class="line"></span>
+          <span class="icon-circle">
+            <slot name="rightIcon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </slot>
+          </span>
+          <span class="line"></span>
+        </div>
+        <h3 class="column-title">{{ rightTitle || "DO's - Practical uses that add value" }}</h3>
         <div class="column-content">
           <slot name="right" />
         </div>
