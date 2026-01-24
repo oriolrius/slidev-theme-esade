@@ -537,54 +537,6 @@ Reusable styling classes
 layout: default
 ---
 
-# CSS Component: esade-box
-
-<div class="grid grid-cols-2 gap-8">
-<div>
-
-## Usage
-```html
-<div class="esade-box info">
-  Content here...
-</div>
-```
-
-## Variants
-| Class | Color | Use Case |
-|-------|-------|----------|
-| `info` | Electric Blue | Information |
-| `success` | Emerald | Positive |
-| `warning` | Yellow | Caution |
-| `highlight` | Kumera Gold | Emphasis |
-
-</div>
-<div>
-
-## Live Examples
-
-<div class="esade-box info mb-2">
-<strong>info:</strong> Electric blue accent
-</div>
-
-<div class="esade-box success mb-2">
-<strong>success:</strong> Emerald accent
-</div>
-
-<div class="esade-box warning mb-2">
-<strong>warning:</strong> Yellow accent
-</div>
-
-<div class="esade-box highlight">
-<strong>highlight:</strong> Kumera gold accent
-</div>
-
-</div>
-</div>
-
----
-layout: default
----
-
 # Text Size Utilities (UnoCSS)
 
 <div class="grid grid-cols-2 gap-8">
@@ -625,6 +577,54 @@ layout: default
 
 <div class="callout-tip mt-4">
 <p>Combine with <code>font-bold</code> or <code>text-gray-500</code> for more control.</p>
+</div>
+
+</div>
+</div>
+
+---
+layout: default
+---
+
+# CSS Component: esade-box
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+## Usage
+```html
+<div class="esade-box info">
+  Content here...
+</div>
+```
+
+## Variants
+| Class | Color | Use Case |
+|-------|-------|----------|
+| `info` | Electric Blue | Information |
+| `success` | Emerald | Positive |
+| `warning` | Yellow | Caution |
+| `highlight` | Kumera Gold | Emphasis |
+
+</div>
+<div>
+
+## Live Examples
+
+<div class="esade-box info mb-2">
+<strong>info:</strong> Electric blue accent
+</div>
+
+<div class="esade-box success mb-2">
+<strong>success:</strong> Emerald accent
+</div>
+
+<div class="esade-box warning mb-2">
+<strong>warning:</strong> Yellow accent
+</div>
+
+<div class="esade-box highlight">
+<strong>highlight:</strong> Kumera gold accent
 </div>
 
 </div>
