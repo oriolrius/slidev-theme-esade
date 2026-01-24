@@ -920,13 +920,13 @@ Leading change
 layout: default
 ---
 
-# Code Example
+# Code Block Example
 
-ESADE's approach to innovation includes embracing technology:
+Veritically and horizontally centered code block with 50% width and 2XL text size:
 
-<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2">
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 text-2xl">
 
-```typescript {|1-3|5-7|all}
+```typescript {all|1-3|5-7}
 // Digital transformation at ESADE
 function innovate(challenge: Challenge): Solution {
   const research = conductResearch(challenge)
@@ -941,7 +941,7 @@ function innovate(challenge: Challenge): Solution {
 
 
 <div class="esade-box info absolute bottom-4 left-8 right-8">
-<i class="fas fa-lightbulb"></i> ESADE combines rigorous academics with real-world impact
+<i class="fas fa-lightbulb"></i> Amazing customizations, and don't forget to check the line numbers!
 </div>
 
 ---
@@ -1017,7 +1017,7 @@ layout: default
 | MIBA | 12 months | On-campus | Barcelona |
 | MiM | 10 months | On-campus | Barcelona |
 
-<div class="mt-4 callout-tip">
+<div class="mt-4 callout-tip absolute bottom-4 left-8 right-8 w-3/4 mx-auto">
 <p>Tables feature navy headers, hover effects, and clean borders for easy reading.</p>
 </div>
 
@@ -1035,17 +1035,34 @@ layout: default
 
 # Typography Scale
 
-<div class="mt-4">
+<div class="grid grid-cols-2 gap-8">
+<div>
 
-# H1 Heading (2.2rem) - ESADE Font
-## H2 Heading (1.6rem) - With Kumera Underline
-### H3 Heading (1.3rem) - Electric Blue
-#### H4 Heading (1.1rem)
+## Markdown Syntax
 
-Body text uses Mabry Pro at 1rem (16px) with 1.5 line height.
+| Element | Syntax |
+|---------|--------|
+| H1 | `# Heading` |
+| H2 | `## Heading` |
+| H3 | `### Heading` |
+| H4 | `#### Heading` |
+| Bold | `**text**` |
+| Italic | `*text*` |
+| Code | `` `code` `` |
 
-**Bold text** for emphasis | *Italic text* for style | `inline code` for technical terms
+</div>
+<div>
 
+## Rendered Result
+
+# H1 - ESADE Font
+## H2 - Kumera Underline
+### H3 - Electric Blue
+#### H4 - Navy
+
+**Bold** | *Italic* | `inline code`
+
+</div>
 </div>
 
 ---
@@ -1054,92 +1071,56 @@ layout: default
 
 # Brand Colors
 
-<div class="grid grid-cols-3 gap-4 mt-6">
+<div class="grid grid-cols-3 gap-4 grid-rows-2" style="height: 70vh; grid-template-rows: 1fr 1fr;">
 
-<div style="background: var(--esade-navy); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-<strong>Navy</strong><br>
-#002E5D<br>
-<code style="background: rgba(255,255,255,0.2);">--esade-navy</code>
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-navy); color: white; border-radius: 8px; font-size: 1.3rem;">
+<strong class="text-8xl">Navy</strong>
+<span class="my-2">#002E5D</span>
+<code style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-navy</code>
 </div>
 
-<div style="background: var(--esade-kumera); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-<strong>Kumera</strong><br>
-#83691F<br>
-<code style="background: rgba(255,255,255,0.2);">--esade-kumera</code>
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-kumera); color: white; border-radius: 8px; font-size: 1.3rem;">
+<strong class="text-8xl">Kumera</strong>
+<span class="my-2">#83691F</span>
+<code style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-kumera</code>
 </div>
 
-<div style="background: var(--esade-electric-blue); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-<strong>Electric Blue</strong><br>
-#00A7E1<br>
-<code style="background: rgba(255,255,255,0.2);">--esade-electric-blue</code>
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-electric-blue); color: white; border-radius: 8px; font-size: 1.3rem;">
+<strong class="text-7xl">Electric Blue</strong>
+<span class="my-2">#00A7E1</span>
+<code style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-electric-blue</code>
 </div>
 
-<div style="background: var(--esade-coral); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-<strong>Coral</strong><br>
-#FF6B6B<br>
-<code style="background: rgba(255,255,255,0.2);">--esade-coral</code>
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-coral); color: white; border-radius: 8px; font-size: 1.3rem;">
+<strong class="text-8xl">Coral</strong>
+<span class="my-2">#FF6B6B</span>
+<code style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-coral</code>
 </div>
 
-<div style="background: var(--esade-emerald); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-<strong>Emerald</strong><br>
-#4ECDC4<br>
-<code style="background: rgba(255,255,255,0.2);">--esade-emerald</code>
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-emerald); color: white; border-radius: 8px; font-size: 1.3rem;">
+<strong class="text-8xl">Emerald</strong>
+<span class="my-2">#4ECDC4</span>
+<code style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-emerald</code>
 </div>
 
-<div style="background: var(--esade-yellow); color: #333; padding: 1.5rem; border-radius: 8px; text-align: center;">
-<strong>Yellow</strong><br>
-#FFE66D<br>
-<code style="background: rgba(0,0,0,0.1);">--esade-yellow</code>
-</div>
-
-</div>
-
----
-layout: default
----
-
-# Get Involved
-
-<div class="mt-8 text-center">
-
-## Ready to create with ESADE Theme?
-
-<div class="mt-8 flex gap-4 justify-center">
-<a href="https://github.com/oriolrius/slidev-theme-esade" class="esade-button">View on GitHub</a>
-<a href="#" class="esade-button secondary">Read Docs</a>
-</div>
-
-<div class="mt-8 text-gray-600">
-
-```bash
-npm install github:oriolrius/slidev-theme-esade
-```
-
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-yellow); color: #333; border-radius: 8px; font-size: 1.3rem;">
+<strong class="text-8xl">Yellow</strong>
+<span class="my-2">#FFE66D</span>
+<code style="background: rgba(0,0,0,0.1); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-yellow</code>
 </div>
 
 </div>
 
----
-layout: cover-split
----
-
-# Thank You
-
-## Theme Reference Complete
-
-All layouts and components documented.
-
-**Development Commands:**
-```bash
-npm run dev     # Start with hot-reload
-npm run build   # Build for production
-npm run export  # Export to PDF
-```
+<div class="mt-16 mx-auto right-8 text-2xl">
+<strong>Usage:</strong> <code>style="color: var(--esade-navy)"</code> | <code>style="background: var(--esade-kumera)"</code> | <code>border-color: var(--esade-coral);</code>
+</div>
 
 ---
 layout: center
 class: text-center
 ---
+
+<i class="fas fa-thumbs-up text-9xl mb-8" style="color: var(--esade-kumera);"></i>
 
 # Thanks for your attention!
 
