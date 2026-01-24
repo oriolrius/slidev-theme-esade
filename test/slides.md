@@ -370,7 +370,7 @@ rightColor: red    # or orange
 </div>
 
 ---
-layout: hero-cards
+layout: cards
 rows: 2
 card1Bg: "#E3EAF6"
 card1Border: "#002E5D"
@@ -383,7 +383,7 @@ card5Border: "#E53935"
 ---
 
 ::title::
-# layout: hero-cards
+# layout: cards
 
 ::icon1::
 <i class="fas fa-palette"></i>
@@ -430,45 +430,6 @@ Per-card props override global defaults.
 
 ::footer::
 **Global:** `cardBg`, `cardBorder` | **Per-card:** `card1Bg`...`card6Bg`, `card1Border`...`card6Border` | **Icons:** `::icon1::`...`::icon6::`
-
----
-layout: cards-grid
-columns: 2
----
-
-::title::
-# Layout: Cards Grid
-
-::intro::
-Grid of image cards with descriptions. Use `columns: 2` (default) or `columns: 3`.
-
-::card1::
-<div class="card-image" style="background: linear-gradient(135deg, #1a1a2e, #16213e); height: 140px; border-radius: 8px; display: flex; align-items: flex-end;">
-  <div class="overlay" style="padding: 1rem; color: white; width: 100%;">
-    <h4 style="margin: 0 0 0.25rem 0; font-weight: 700;">Example Card One</h4>
-    <span class="meta" style="font-size: 0.75rem; opacity: 0.85;">50 sources · Jan 2025</span>
-  </div>
-</div>
-<div class="card-content" style="padding-top: 0.75rem;">
-  <p style="font-size: 0.9rem; line-height: 1.5; color: #333;">Description text with <strong>bold keywords</strong> for emphasis.</p>
-</div>
-<div class="card-link" style="margin-top: 0.5rem;">
-  <a href="#" style="color: var(--esade-navy); font-weight: 600; text-decoration: underline;">Explore More →</a>
-</div>
-
-::card2::
-<div class="card-image" style="background: linear-gradient(135deg, #0f3460, #16213e); height: 140px; border-radius: 8px; display: flex; align-items: flex-end;">
-  <div class="overlay" style="padding: 1rem; color: white; width: 100%;">
-    <h4 style="margin: 0 0 0.25rem 0; font-weight: 700;">Example Card Two</h4>
-    <span class="meta" style="font-size: 0.75rem; opacity: 0.85;">120 sources · Feb 2025</span>
-  </div>
-</div>
-<div class="card-content" style="padding-top: 0.75rem;">
-  <p style="font-size: 0.9rem; line-height: 1.5; color: #333;">Cards support image overlays, titles, metadata, and CTAs.</p>
-</div>
-<div class="card-link" style="margin-top: 0.5rem;">
-  <a href="#" style="color: var(--esade-navy); font-weight: 600; text-decoration: underline;">Explore More →</a>
-</div>
 
 ---
 layout: infographic
