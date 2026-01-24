@@ -808,6 +808,94 @@ layout: default
 </div>
 
 ---
+layout: default
+---
+
+# Code Block Example
+
+Veritically and horizontally centered code block with 50% width and 2XL text size:
+
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 text-2xl">
+
+```typescript {all|1-3|5-7}
+// Digital transformation at ESADE
+function innovate(challenge: Challenge): Solution {
+  const research = conductResearch(challenge)
+  const students = engageStudents(research)
+  const impact = createSocialImpact(students)
+
+  return { solution: impact, legacy: true }
+}
+```
+
+</div>
+
+
+<div class="esade-box info absolute bottom-4 left-8 right-8">
+<i class="fas fa-lightbulb"></i> Amazing customizations, and don't forget to check the line numbers!
+</div>
+
+---
+layout: default
+---
+
+# Code Block Styling
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+## Line Numbers
+Hover any code block to show toggle button, or wrap in a div:
+
+`<div class="line-numbers">` + code block + `</div>`
+
+## Width Control
+Wrap code in div with UnoCSS width classes:
+- `w-1/2` → 50% | `w-2/3` → 66% | `w-3/4` → 75% | `w-full` → 100%
+
+## Alignment
+- `mx-auto` → Center | `ml-auto` → Right | `mr-auto` → Left
+
+</div>
+<div>
+
+## Live Examples
+
+<div class="w-3/4 mx-auto line-numbers mb-2">
+
+```typescript
+// Centered (mx-auto), 75% width, with line numbers
+const centered = true
+```
+
+</div>
+
+<div class="w-1/2 ml-auto mb-2">
+
+```typescript
+// Right aligned (ml-auto), 50% width
+const right = "aligned"
+```
+
+</div>
+
+<div class="w-1/2">
+
+```typescript
+// Left (default), 50% width
+const left = "side"
+```
+
+</div>
+
+</div>
+</div>
+
+<div class="callout-tip no-icon absolute bottom-4 left-8 right-8">
+<p class="text-lg"><i class="fas fa-code mr-2"></i>Wrap code blocks in a div with classes to control width and position.</p>
+</div>
+
+---
 layout: section
 ---
 
@@ -914,94 +1002,6 @@ Leading change
 
 <div class="callout-info no-icon abs-b w-full left-0 mx-8 mb-4">
 <p class="text-lg"><i class="fas fa-graduation-cap mr-2"></i>Statistics represent ESADE's commitment to global education and leadership.</p>
-</div>
-
----
-layout: default
----
-
-# Code Block Example
-
-Veritically and horizontally centered code block with 50% width and 2XL text size:
-
-<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 text-2xl">
-
-```typescript {all|1-3|5-7}
-// Digital transformation at ESADE
-function innovate(challenge: Challenge): Solution {
-  const research = conductResearch(challenge)
-  const students = engageStudents(research)
-  const impact = createSocialImpact(students)
-
-  return { solution: impact, legacy: true }
-}
-```
-
-</div>
-
-
-<div class="esade-box info absolute bottom-4 left-8 right-8">
-<i class="fas fa-lightbulb"></i> Amazing customizations, and don't forget to check the line numbers!
-</div>
-
----
-layout: default
----
-
-# Code Block Styling
-
-<div class="grid grid-cols-2 gap-8">
-<div>
-
-## Line Numbers
-Hover any code block to show toggle button, or wrap in a div:
-
-`<div class="line-numbers">` + code block + `</div>`
-
-## Width Control
-Wrap code in div with UnoCSS width classes:
-- `w-1/2` → 50% | `w-2/3` → 66% | `w-3/4` → 75% | `w-full` → 100%
-
-## Alignment
-- `mx-auto` → Center | `ml-auto` → Right | `mr-auto` → Left
-
-</div>
-<div>
-
-## Live Examples
-
-<div class="w-3/4 mx-auto line-numbers mb-2">
-
-```typescript
-// Centered (mx-auto), 75% width, with line numbers
-const centered = true
-```
-
-</div>
-
-<div class="w-1/2 ml-auto mb-2">
-
-```typescript
-// Right aligned (ml-auto), 50% width
-const right = "aligned"
-```
-
-</div>
-
-<div class="w-1/2">
-
-```typescript
-// Left (default), 50% width
-const left = "side"
-```
-
-</div>
-
-</div>
-</div>
-
-<div class="callout-tip no-icon absolute bottom-4 left-8 right-8">
-<p class="text-lg"><i class="fas fa-code mr-2"></i>Wrap code blocks in a div with classes to control width and position.</p>
 </div>
 
 ---
