@@ -585,6 +585,55 @@ layout: default
 layout: default
 ---
 
+# Text Size Utilities (UnoCSS)
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+## Usage
+```html
+<p class="text-sm">Small text</p>
+<p class="text-base">Base text (default)</p>
+<p class="text-lg">Large text</p>
+<p class="text-xl">Extra large</p>
+<p class="text-2xl">2x large</p>
+```
+
+## Available Classes
+| Class | Size | Use Case |
+|-------|------|----------|
+| `text-xs` | 0.75rem | Fine print |
+| `text-sm` | 0.875rem | Secondary info |
+| `text-base` | 1rem | Body text |
+| `text-lg` | 1.125rem | Emphasis |
+| `text-xl` | 1.25rem | Subheadings |
+| `text-2xl` | 1.5rem | Large text |
+| `text-3xl` | 1.875rem | Headlines |
+
+</div>
+<div>
+
+## Live Examples
+
+<p class="text-xs mb-1">text-xs: Fine print and disclaimers</p>
+<p class="text-sm mb-1">text-sm: Secondary information</p>
+<p class="text-base mb-1">text-base: Default body text size</p>
+<p class="text-lg mb-1">text-lg: Slightly larger for emphasis</p>
+<p class="text-xl mb-1">text-xl: Subheadings or key points</p>
+<p class="text-2xl mb-1">text-2xl: Section highlights</p>
+<p class="text-3xl">text-3xl: Major headlines</p>
+
+<div class="callout-tip mt-4">
+<p>Combine with <code>font-bold</code> or <code>text-gray-500</code> for more control.</p>
+</div>
+
+</div>
+</div>
+
+---
+layout: default
+---
+
 # CSS Component: callout-*
 
 <div class="grid grid-cols-2 gap-8">
