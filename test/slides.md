@@ -924,11 +924,10 @@ layout: default
 
 ESADE's approach to innovation includes embracing technology:
 
-```typescript {all|1-3|5-7|all}
+```typescript {|1-3|5-7|all}
 // Digital transformation at ESADE
 function innovate(challenge: Challenge): Solution {
   const research = conductResearch(challenge)
-
   const students = engageStudents(research)
   const impact = createSocialImpact(students)
 
@@ -936,8 +935,70 @@ function innovate(challenge: Challenge): Solution {
 }
 ```
 
+
 <div class="mt-4 esade-box info">
 <i class="fas fa-lightbulb"></i> ESADE combines rigorous academics with real-world impact
+</div>
+
+---
+layout: default
+---
+
+# Code Block Styling
+
+<div class="grid grid-cols-3 gap-6">
+<div>
+
+## Line Numbers
+Hover code to toggle. Or use classes:
+
+| Class | Effect |
+|-------|--------|
+| `line-numbers` | Show |
+| `no-line-numbers` | Hide |
+
+</div>
+<div>
+
+## Width & Position
+
+| Class | Effect |
+|-------|--------|
+| `w-1/2` | 50% width |
+| `w-2/3` | 66% width |
+| `w-3/4` | 75% width |
+| `mx-auto` | Center |
+| `ml-auto` | Right align |
+| `mr-auto` | Left align |
+
+</div>
+<div>
+
+## Examples
+
+<div class="w-2/3 mx-auto line-numbers">
+
+```typescript
+// Centered, 66% width
+const x = 42
+```
+
+</div>
+
+<div class="w-1/2 ml-auto">
+
+```typescript
+// Right aligned, 50%
+const y = 99
+```
+
+</div>
+
+</div>
+</div>
+
+<div class="callout-tip no-icon abs-b w-full left-0 mx-8 mb-4">
+<p class="text-lg"><i class="fas fa-code mr-2"></i>Combine width classes with alignment for precise code block positioning.</p>
 </div>
 
 ---

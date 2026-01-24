@@ -205,6 +205,127 @@ pre code .line {
   padding-left: calc(1.25rem - 3px);
 }
 
+/* Disable line dimming (dishonored effect) */
+.no-dim .slidev-code-dishonored,
+.no-dim .slidev-code .slidev-code-dishonored,
+.slidev-code.no-dim .slidev-code-dishonored {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Auto-disable dimming when no lines are highlighted (first step with empty {|...}) */
+.slidev-code:not(:has(.slidev-code-highlighted)) .slidev-code-dishonored,
+.slidev-code:not(:has(.line.highlighted)) .slidev-code-dishonored,
+pre.shiki:not(:has(.highlighted)) .slidev-code-dishonored {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Remove highlight overlay when ALL lines are highlighted (shows as clean code) */
+.slidev-code:not(:has(.line:not(.slidev-code-highlighted))) .line.slidev-code-highlighted.highlighted,
+.slidev-code:not(:has(.line:not(.highlighted))) .line.slidev-code-highlighted.highlighted,
+pre.shiki:not(:has(.line:not(.slidev-code-highlighted))) .line.slidev-code-highlighted.highlighted {
+  background-color: transparent !important;
+  border-left: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* ============================================
+   CODE BLOCK LINE NUMBERS TOGGLE
+   ============================================ */
+
+/* Container for code blocks - needed for toggle button positioning */
+.slidev-code-wrapper,
+div:has(> pre.shiki),
+div:has(> pre.slidev-code) {
+  position: relative;
+}
+
+/* Line numbers toggle button */
+.line-numbers-toggle {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 0;
+}
+
+.line-numbers-toggle::before {
+  content: '\f292';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Show button on hover */
+.slidev-code-wrapper:hover .line-numbers-toggle,
+div:has(> pre.shiki):hover .line-numbers-toggle,
+div:has(> pre.slidev-code):hover .line-numbers-toggle,
+pre.shiki:hover + .line-numbers-toggle,
+pre:hover .line-numbers-toggle {
+  opacity: 1;
+}
+
+.line-numbers-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.line-numbers-toggle:hover::before {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Line numbers - hidden by default */
+.shiki .line::before,
+.slidev-code .line::before {
+  content: counter(line);
+  counter-increment: line;
+  display: none;
+  min-width: 2rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.4);
+  user-select: none;
+}
+
+/* Initialize counter on code element */
+.shiki code,
+.slidev-code code {
+  counter-reset: line;
+}
+
+/* Modifier: show line numbers */
+pre.shiki.line-numbers .line::before,
+pre.slidev-code.line-numbers .line::before,
+.line-numbers pre.shiki .line::before,
+.line-numbers pre.slidev-code .line::before,
+pre.shiki.show-lines .line::before,
+pre.slidev-code.show-lines .line::before {
+  display: inline-block;
+}
+
+/* Modifier: hide line numbers (override) */
+pre.shiki.no-line-numbers .line::before,
+pre.slidev-code.no-line-numbers .line::before,
+.no-line-numbers pre.shiki .line::before,
+.no-line-numbers pre.slidev-code .line::before,
+pre.shiki.hide-lines .line::before,
+pre.slidev-code.hide-lines .line::before {
+  display: none !important;
+}
+
 /* Lists - Explicit styling to override resets */
 .slidev-layout ul,
 .slidev-layout ol {
