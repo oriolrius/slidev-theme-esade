@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="infographic-layout" :class="background || 'cream'">
+  <div class="image-layout" :class="background || 'cream'">
     <!-- Logo -->
     <div class="logo-area">
       <img src="/esade-logo.svg" alt="ESADE" class="esade-logo" />
@@ -22,7 +22,7 @@ defineProps<{
     </div>
 
     <!-- Main Infographic Area -->
-    <div class="infographic-content">
+    <div class="image-content">
       <slot />
     </div>
 
@@ -34,7 +34,7 @@ defineProps<{
 </template>
 
 <style scoped>
-.infographic-layout {
+.image-layout {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -42,19 +42,19 @@ defineProps<{
   position: relative;
 }
 
-.infographic-layout.white {
+.image-layout.white {
   background: #ffffff;
 }
 
-.infographic-layout.cream {
+.image-layout.cream {
   background: #F8F9FA;
 }
 
-.infographic-layout.light-blue {
+.image-layout.light-blue {
   background: #E8F4F8;
 }
 
-.infographic-layout.light-gray {
+.image-layout.light-gray {
   background: var(--esade-light-gray, #F5F5F5);
 }
 
@@ -96,7 +96,7 @@ defineProps<{
   max-width: 90%;
 }
 
-.infographic-content {
+.image-content {
   flex: 1;
   display: flex;
   align-items: center;
@@ -104,20 +104,20 @@ defineProps<{
   overflow: hidden;
 }
 
-/* Default slot styling for infographic content */
-.infographic-content :deep(img) {
+/* Default slot styling for image content */
+.image-content :deep(img) {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
 
-.infographic-content :deep(svg) {
+.image-content :deep(svg) {
   max-width: 100%;
   max-height: 100%;
 }
 
-/* For custom infographic layouts with flex children */
-.infographic-content :deep(.info-grid) {
+/* For custom image layouts with flex children */
+.image-content :deep(.info-grid) {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
@@ -126,13 +126,13 @@ defineProps<{
   align-items: center;
 }
 
-.infographic-content :deep(.info-left) {
+.image-content :deep(.info-left) {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.infographic-content :deep(.info-right) {
+.image-content :deep(.info-right) {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -140,7 +140,7 @@ defineProps<{
   height: 100%;
 }
 
-.infographic-content :deep(.info-item) {
+.image-content :deep(.info-item) {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,13 +148,13 @@ defineProps<{
   padding: 0.75rem;
 }
 
-.infographic-content :deep(.info-item .icon) {
+.image-content :deep(.info-item .icon) {
   width: 60px;
   height: 60px;
   margin-bottom: 0.5rem;
 }
 
-.infographic-content :deep(.info-item h4) {
+.image-content :deep(.info-item h4) {
   font-family: 'Mabry Pro', sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
@@ -162,7 +162,7 @@ defineProps<{
   margin: 0 0 0.25rem 0;
 }
 
-.infographic-content :deep(.info-item p) {
+.image-content :deep(.info-item p) {
   font-family: 'Mabry Pro', sans-serif;
   font-size: 0.75rem;
   color: #555;

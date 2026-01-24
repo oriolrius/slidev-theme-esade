@@ -432,30 +432,44 @@ Per-card props override global defaults.
 **Global:** `cardBg`, `cardBorder` | **Per-card:** `card1Bg`...`card6Bg`, `card1Border`...`card6Border` | **Icons:** `::icon1::`...`::icon6::`
 
 ---
-layout: infographic
+layout: image
 background: cream
 ---
 
 ::title::
-# Layout: Infographic
+# layout: image
 
 ::subtitle::
-Full-width layout for diagrams and visual content. Background options: white, cream, light-blue, light-gray.
+Full-width layout for images, diagrams, and visual content. ESADE logo appears top-right automatically.
 
-<div style="display: flex; align-items: center; justify-content: center; gap: 2rem; height: 100%;">
-  <div style="text-align: center;">
-    <div style="width: 80px; height: 80px; background: var(--esade-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin: 0 auto 0.5rem;">📄</div>
-    <p style="font-size: 0.8rem; color: #444;">Sources</p>
+<div style="display: flex; gap: 3rem; height: 100%; align-items: center; justify-content: center;">
+  <div style="flex: 1; max-width: 280px;">
+    <h3 style="color: var(--esade-navy); margin-bottom: 1rem;">Props</h3>
+    <div style="font-family: monospace; font-size: 0.85rem; background: white; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
+      <div><strong>background:</strong></div>
+      <div style="padding-left: 1rem;">white</div>
+      <div style="padding-left: 1rem;">cream (default)</div>
+      <div style="padding-left: 1rem;">light-blue</div>
+      <div style="padding-left: 1rem;">light-gray</div>
+    </div>
   </div>
-  <div style="font-size: 1.5rem; color: var(--esade-kumera);">→</div>
-  <div style="text-align: center;">
-    <div style="width: 80px; height: 80px; background: var(--esade-electric-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin: 0 auto 0.5rem;">⚙️</div>
-    <p style="font-size: 0.8rem; color: #444;">Process</p>
+  <div style="flex: 1; max-width: 280px;">
+    <h3 style="color: var(--esade-navy); margin-bottom: 1rem;">Slots</h3>
+    <div style="font-family: monospace; font-size: 0.85rem; background: white; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
+      <div><strong>::title::</strong> - heading</div>
+      <div><strong>::subtitle::</strong> - description</div>
+      <div><strong>default</strong> - main content</div>
+      <div><strong>::brand::</strong> - bottom-right</div>
+    </div>
   </div>
-  <div style="font-size: 1.5rem; color: var(--esade-kumera);">→</div>
-  <div style="text-align: center;">
-    <div style="width: 80px; height: 80px; background: var(--esade-emerald); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin: 0 auto 0.5rem;">✨</div>
-    <p style="font-size: 0.8rem; color: #444;">Output</p>
+  <div style="flex: 1; max-width: 280px;">
+    <h3 style="color: var(--esade-navy); margin-bottom: 1rem;">Use Cases</h3>
+    <div style="font-size: 0.9rem; background: white; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
+      <div>• Full-bleed images</div>
+      <div>• Diagrams & charts</div>
+      <div>• Infographics</div>
+      <div>• Screenshots</div>
+    </div>
   </div>
 </div>
 
