@@ -54,7 +54,7 @@ Changes to theme files (layouts, CSS, components) automatically refresh the prev
 2. **Advanced Layouts** (Vue components)
 3. **CSS Components**
 4. **Practical Examples**
-5. **Typography & Colors**
+5. **Typography, Colors & Icons**
 
 </div>
 </div>
@@ -1025,7 +1025,7 @@ layout: default
 layout: section
 ---
 
-# Part 5: Typography & Colors
+# Part 5: Typography, Colors & Icons
 
 Brand elements reference
 
@@ -1113,6 +1113,280 @@ layout: default
 
 <div class="mt-16 mx-auto right-8 text-2xl">
 <strong>Usage:</strong> <code>style="color: var(--esade-navy)"</code> | <code>style="background: var(--esade-kumera)"</code> | <code>border-color: var(--esade-coral);</code>
+</div>
+
+---
+layout: default
+---
+
+# Icons: Emojis
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+## Usage
+
+Emojis work natively in Slidev markdown:
+
+```markdown
+# My Slide Title 🚀
+
+- Point one ✅
+- Point two ❌
+- Important! ⚠️
+```
+
+## Pros & Cons
+
+| Pros | Cons |
+|------|------|
+| No setup required | Limited styling |
+| Universal support | Can't change color |
+| Copy-paste easy | Platform-dependent |
+
+</div>
+<div>
+
+## Live Examples
+
+<div class="text-4xl mb-4">
+🎓 📚 💡 🎯 📊 🏆 🌍 🤝 🔬 📈
+</div>
+
+<div class="grid grid-cols-2 gap-4">
+
+<div class="feature-card text-center">
+<div class="text-6xl mb-2">🚀</div>
+<p>Innovation</p>
+</div>
+
+<div class="feature-card text-center">
+<div class="text-6xl mb-2">🎓</div>
+<p>Education</p>
+</div>
+
+<div class="feature-card text-center">
+<div class="text-6xl mb-2">🌍</div>
+<p>Global</p>
+</div>
+
+<div class="feature-card text-center">
+<div class="text-6xl mb-2">💡</div>
+<p>Ideas</p>
+</div>
+
+</div>
+
+</div>
+</div>
+
+---
+layout: default
+---
+
+# Icons: SVG
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+## Inline SVG Usage
+
+```html
+<svg viewBox="0 0 24 24" width="48" height="48"
+     fill="var(--esade-navy)">
+  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+  <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+</svg>
+```
+
+## Pros & Cons
+
+| Pros | Cons |
+|------|------|
+| Fully customizable | Verbose syntax |
+| CSS color control | Requires icon code |
+| Scalable quality | Larger file size |
+
+</div>
+<div>
+
+## Live Examples
+
+<div class="flex gap-8 items-center mb-6">
+
+<svg viewBox="0 0 24 24" width="64" height="64" fill="var(--esade-navy)">
+  <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+</svg>
+
+<svg viewBox="0 0 24 24" width="64" height="64" fill="var(--esade-kumera)">
+  <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/>
+</svg>
+
+<svg viewBox="0 0 24 24" width="64" height="64" fill="var(--esade-electric-blue)">
+  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+</svg>
+
+<svg viewBox="0 0 24 24" width="64" height="64" fill="var(--esade-coral)">
+  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+</svg>
+
+</div>
+
+<div class="callout-tip">
+<p><strong>Tip:</strong> Use <code>fill="var(--esade-navy)"</code> to apply brand colors to SVG icons.</p>
+</div>
+
+</div>
+</div>
+
+---
+layout: default
+---
+
+# Icons: Font Awesome
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+## Usage
+
+Font Awesome is pre-loaded in this theme:
+
+```html
+<i class="fas fa-icon-name"></i>
+<i class="far fa-icon-name"></i>
+<i class="fab fa-icon-name"></i>
+```
+
+## Icon Styles
+
+| Prefix | Style | Example |
+|--------|-------|---------|
+| `fas` | Solid | <i class="fas fa-star"></i> `fa-star` |
+| `far` | Regular | <i class="far fa-star"></i> `fa-star` |
+| `fab` | Brands | <i class="fab fa-github"></i> `fa-github` |
+
+</div>
+<div>
+
+## Sizing
+
+```html
+<i class="fas fa-star text-2xl"></i>
+<i class="fas fa-star text-4xl"></i>
+<i class="fas fa-star text-6xl"></i>
+```
+
+## Live Examples
+
+<div class="flex gap-4 items-end mb-6">
+<i class="fas fa-graduation-cap text-2xl" style="color: var(--esade-navy);"></i>
+<i class="fas fa-graduation-cap text-4xl" style="color: var(--esade-kumera);"></i>
+<i class="fas fa-graduation-cap text-6xl" style="color: var(--esade-electric-blue);"></i>
+<i class="fas fa-graduation-cap text-8xl" style="color: var(--esade-coral);"></i>
+</div>
+
+## Color Styling
+
+```html
+<i class="fas fa-star"
+   style="color: var(--esade-kumera);"></i>
+```
+
+<div class="flex gap-6 text-4xl mt-4">
+<i class="fas fa-star" style="color: var(--esade-navy);"></i>
+<i class="fas fa-star" style="color: var(--esade-kumera);"></i>
+<i class="fas fa-star" style="color: var(--esade-electric-blue);"></i>
+<i class="fas fa-star" style="color: var(--esade-coral);"></i>
+<i class="fas fa-star" style="color: var(--esade-emerald);"></i>
+</div>
+
+<div class="callout-info mt-4">
+<p>Browse all icons at <a href="https://fontawesome.com/icons" target="_blank">fontawesome.com/icons</a></p>
+</div>
+
+</div>
+</div>
+
+---
+layout: default
+---
+
+# Common Icons Reference
+
+<div class="grid grid-cols-3 gap-4 text-xs">
+<div>
+
+## General
+
+| Icon | Code | Usage |
+|------|------|-------|
+| <i class="fas fa-check text-lg" style="color: var(--esade-emerald);"></i> | `fa-check` | Success |
+| <i class="fas fa-xmark text-lg" style="color: var(--esade-coral);"></i> | `fa-xmark` | Error/Close |
+| <i class="fas fa-info-circle text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-info-circle` | Information |
+| <i class="fas fa-exclamation-triangle text-lg" style="color: var(--esade-yellow);"></i> | `fa-exclamation-triangle` | Warning |
+| <i class="fas fa-question-circle text-lg" style="color: var(--esade-kumera);"></i> | `fa-question-circle` | Help |
+| <i class="fas fa-lightbulb text-lg" style="color: var(--esade-kumera);"></i> | `fa-lightbulb` | Tip/Idea |
+| <i class="fas fa-search text-lg" style="color: var(--esade-navy);"></i> | `fa-search` | Search |
+| <i class="fas fa-cog text-lg" style="color: var(--esade-navy);"></i> | `fa-cog` | Settings |
+| <i class="fas fa-edit text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-edit` | Edit |
+| <i class="fas fa-trash text-lg" style="color: var(--esade-coral);"></i> | `fa-trash` | Delete |
+| <i class="fas fa-plus text-lg" style="color: var(--esade-emerald);"></i> | `fa-plus` | Add |
+| <i class="fas fa-minus text-lg" style="color: var(--esade-coral);"></i> | `fa-minus` | Remove |
+| <i class="fas fa-arrow-right text-lg" style="color: var(--esade-navy);"></i> | `fa-arrow-right` | Next |
+| <i class="fas fa-arrow-left text-lg" style="color: var(--esade-navy);"></i> | `fa-arrow-left` | Previous |
+| <i class="fas fa-download text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-download` | Download |
+| <i class="fas fa-upload text-lg" style="color: var(--esade-kumera);"></i> | `fa-upload` | Upload |
+
+</div>
+<div>
+
+## Education
+
+| Icon | Code | Usage |
+|------|------|-------|
+| <i class="fas fa-graduation-cap text-lg" style="color: var(--esade-navy);"></i> | `fa-graduation-cap` | Graduation |
+| <i class="fas fa-book text-lg" style="color: var(--esade-kumera);"></i> | `fa-book` | Books |
+| <i class="fas fa-chalkboard-teacher text-lg" style="color: var(--esade-navy);"></i> | `fa-chalkboard-teacher` | Teaching |
+| <i class="fas fa-users text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-users` | Team/Group |
+| <i class="fas fa-trophy text-lg" style="color: var(--esade-kumera);"></i> | `fa-trophy` | Achievement |
+| <i class="fas fa-chart-line text-lg" style="color: var(--esade-emerald);"></i> | `fa-chart-line` | Growth |
+| <i class="fas fa-globe text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-globe` | Global |
+| <i class="fas fa-university text-lg" style="color: var(--esade-navy);"></i> | `fa-university` | Institution |
+| <i class="fas fa-book-open text-lg" style="color: var(--esade-kumera);"></i> | `fa-book-open` | Reading |
+| <i class="fas fa-pen text-lg" style="color: var(--esade-navy);"></i> | `fa-pen` | Writing |
+| <i class="fas fa-calendar text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-calendar` | Schedule |
+| <i class="fas fa-clock text-lg" style="color: var(--esade-kumera);"></i> | `fa-clock` | Time |
+| <i class="fas fa-certificate text-lg" style="color: var(--esade-kumera);"></i> | `fa-certificate` | Certificate |
+| <i class="fas fa-medal text-lg" style="color: var(--esade-kumera);"></i> | `fa-medal` | Award |
+| <i class="fas fa-star text-lg" style="color: var(--esade-kumera);"></i> | `fa-star` | Rating |
+| <i class="fas fa-comments text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-comments` | Discussion |
+
+</div>
+<div>
+
+## Tech & Business
+
+| Icon | Code | Usage |
+|------|------|-------|
+| <i class="fas fa-code text-lg" style="color: var(--esade-navy);"></i> | `fa-code` | Development |
+| <i class="fas fa-database text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-database` | Data |
+| <i class="fas fa-cloud text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-cloud` | Cloud |
+| <i class="fas fa-rocket text-lg" style="color: var(--esade-coral);"></i> | `fa-rocket` | Launch |
+| <i class="fas fa-briefcase text-lg" style="color: var(--esade-kumera);"></i> | `fa-briefcase` | Business |
+| <i class="fas fa-handshake text-lg" style="color: var(--esade-emerald);"></i> | `fa-handshake` | Partnership |
+| <i class="fab fa-github text-lg" style="color: var(--esade-navy);"></i> | `fa-github` | GitHub |
+| <i class="fab fa-linkedin text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-linkedin` | LinkedIn |
+| <i class="fas fa-laptop text-lg" style="color: var(--esade-navy);"></i> | `fa-laptop` | Computer |
+| <i class="fas fa-server text-lg" style="color: var(--esade-navy);"></i> | `fa-server` | Server |
+| <i class="fas fa-lock text-lg" style="color: var(--esade-emerald);"></i> | `fa-lock` | Security |
+| <i class="fas fa-chart-bar text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-chart-bar` | Analytics |
+| <i class="fas fa-money-bill text-lg" style="color: var(--esade-emerald);"></i> | `fa-money-bill` | Finance |
+| <i class="fas fa-building text-lg" style="color: var(--esade-navy);"></i> | `fa-building` | Company |
+| <i class="fab fa-twitter text-lg" style="color: var(--esade-electric-blue);"></i> | `fa-twitter` | Twitter |
+| <i class="fab fa-slack text-lg" style="color: var(--esade-coral);"></i> | `fa-slack` | Slack |
+
+</div>
 </div>
 
 ---
