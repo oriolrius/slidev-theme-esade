@@ -537,6 +537,7 @@ tr:hover {
   border-radius: 8px;
   margin: 1.5rem 0;
   border-left: 5px solid;
+  font-size: 1.3rem;
 }
 
 .esade-box.info {
@@ -562,14 +563,14 @@ tr:hover {
 /* Buttons */
 .esade-button {
   display: inline-block;
-  padding: 0.8rem 2rem;
+  padding: 0.6rem 1.5rem;
   background-color: var(--esade-kumera);
   color: var(--esade-white);
   border: none;
   border-radius: 4px;
   font-family: 'Mabry Pro', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 400;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -716,10 +717,13 @@ tr:hover {
 }
 
 .callout-warning::before {
-  content: '\26A0\FE0F';
+  content: '\f071';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
   font-size: 1.1rem;
   flex-shrink: 0;
   line-height: 1.4;
+  color: #e65100;
 }
 
 .callout-warning h4,
@@ -752,10 +756,13 @@ tr:hover {
 }
 
 .callout-info::before {
-  content: '\1F4AC';
+  content: '\f05a';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
   font-size: 1rem;
   flex-shrink: 0;
   line-height: 1.4;
+  color: var(--esade-navy);
 }
 
 .callout-info p {
@@ -784,10 +791,13 @@ tr:hover {
 }
 
 .callout-tip::before {
-  content: '\1F4A1';
-  font-size: 1.8rem;
+  content: '\f0eb';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 1.5rem;
   flex-shrink: 0;
   line-height: 1.4;
+  color: var(--esade-emerald);
 }
 
 .callout-tip p {
@@ -829,10 +839,13 @@ tr:hover {
 }
 
 .callout-note::before {
-  content: '\1F4DD';
+  content: '\f249';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
   font-size: 1rem;
   flex-shrink: 0;
   line-height: 1.4;
+  color: #9333EA;
 }
 
 .callout-note p {
@@ -855,10 +868,13 @@ tr:hover {
 }
 
 .callout-secure::before {
-  content: '\1F512';
+  content: '\f023';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
   font-size: 1rem;
   flex-shrink: 0;
   line-height: 1.4;
+  color: #f59e0b;
 }
 
 .callout-secure p {
@@ -867,6 +883,15 @@ tr:hover {
   color: #333;
   line-height: 1.5;
   margin: 0;
+}
+
+/* No icon modifier for callouts */
+.callout-warning.no-icon::before,
+.callout-info.no-icon::before,
+.callout-tip.no-icon::before,
+.callout-note.no-icon::before,
+.callout-secure.no-icon::before {
+  display: none;
 }
 
 /* ============================================

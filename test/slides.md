@@ -649,11 +649,11 @@ layout: default
 ## Variants
 | Class | Background | Icon |
 |-------|------------|------|
-| `callout-warning` | Cream | ⚠️ |
-| `callout-info` | Light Blue | ℹ️ |
-| `callout-tip` | Light Green | 💡 |
-| `callout-note` | Light Purple | 📝 |
-| `callout-secure` | Light Gray | 🔒 |
+| `callout-warning` | Cream | `fa-triangle-exclamation` |
+| `callout-info` | Light Blue | `fa-circle-info` |
+| `callout-tip` | Light Green | `fa-lightbulb` |
+| `callout-note` | Light Purple | `fa-i-cursor` |
+| `callout-secure` | Light Gray | `fa-lock` |
 
 </div>
 <div>
@@ -761,45 +761,45 @@ layout: default
 ```html
 <div class="feature-card">
   <h3>Card Title</h3>
-  <p>Card content goes here...</p>
+  <p>Content here...</p>
 </div>
 ```
 
 ## Styling
 - Light gray background (`#F8F9FA`)
-- Rounded corners (`8px`)
-- Padding: `1.5rem`
-- Best used in grid layouts
-
-## Grid Example
-```html
-<div class="grid grid-cols-3 gap-4">
-  <div class="feature-card">...</div>
-  <div class="feature-card">...</div>
-  <div class="feature-card">...</div>
-</div>
-```
+- Rounded corners (`8px`) / Padding: `1.5rem`
 
 </div>
 <div>
 
 ## Live Examples
 
-<div class="grid grid-cols-1 gap-4">
+<div class="grid grid-cols-1 gap-3">
 
 <div class="feature-card">
 <h3>Feature Card</h3>
-<p>Light gray background with rounded corners. Ideal for organizing content.</p>
+<p>Light gray background with rounded corners.</p>
 </div>
 
 <div class="feature-card">
 <h3>Multiple Cards</h3>
-<p>Use with UnoCSS grid utilities: <code>grid grid-cols-2 gap-4</code></p>
+<p>Use with UnoCSS: <code>grid grid-cols-2 gap-4</code></p>
 </div>
 
+<div class="grid grid-cols-2 gap-3">
 <div class="feature-card">
+<h3>Card 1</h3>
+<p>First card in grid.</p>
+</div>
+<div class="feature-card">
+<h3>Card 2</h3>
+<p>Second card in grid.</p>
+</div>
+</div>
+
+<div class="feature-card mt-3">
 <h3>Flexible Content</h3>
-<p>Cards can contain headings, text, lists, or any HTML content.</p>
+<p>Cards can contain any HTML content.</p>
 </div>
 
 </div>
@@ -829,10 +829,10 @@ layout: default
 
 A leading global institution for:
 
-- 🎓 **Business Education** - Top-ranked MBA programs
-- ⚖️ **Law School** - Excellence in legal education
-- 🔬 **Innovation** - Research and thought leadership
-- 🌍 **Global Impact** - Social responsibility and ethics
+- <i class="fas fa-graduation-cap"></i> **Business Education** - Top-ranked MBA programs
+- <i class="fas fa-scale-balanced"></i> **Law School** - Excellence in legal education
+- <i class="fas fa-flask"></i> **Innovation** - Research and thought leadership
+- <i class="fas fa-earth-americas"></i> **Global Impact** - Social responsibility and ethics
 
 <div class="mt-8">
 <span class="esade-badge gold">Top 10 European B-School</span>
@@ -850,28 +850,28 @@ layout: default
 
 <div class="esade-box info">
 
-### 🎯 Excellence
+### <i class="fas fa-bullseye"></i> Excellence
 Pursuing the highest standards in education and research
 
 </div>
 
 <div class="esade-box success">
 
-### 🤝 Social Responsibility
+### <i class="fas fa-handshake"></i> Social Responsibility
 Commitment to meaningful change and impact
 
 </div>
 
 <div class="esade-box warning">
 
-### 💡 Innovation
+### <i class="fas fa-lightbulb"></i> Innovation
 Embracing new ideas and transformative thinking
 
 </div>
 
 <div class="esade-box highlight">
 
-### 🌐 Global Perspective
+### <i class="fas fa-globe"></i> Global Perspective
 Diverse, inclusive international community
 
 </div>
@@ -888,7 +888,7 @@ layout: default
 
 <div>
 
-## 65+
+## <i class="fas fa-history"></i> 65+
 ### Years of Excellence
 Since 1958
 
@@ -896,7 +896,7 @@ Since 1958
 
 <div>
 
-## 100+
+## <i class="fas fa-globe"></i> 100+
 ### Countries Represented
 Global diversity
 
@@ -904,7 +904,7 @@ Global diversity
 
 <div>
 
-## #1
+## <i class="fas fa-trophy"></i> #1
 ### In Social Impact
 Leading change
 
@@ -912,8 +912,8 @@ Leading change
 
 </div>
 
-<div class="mt-8 callout-info">
-<p>Statistics represent ESADE's commitment to global education and leadership.</p>
+<div class="callout-info no-icon abs-b w-full left-0 mx-8 mb-4">
+<p class="text-lg"><i class="fas fa-graduation-cap mr-2"></i>Statistics represent ESADE's commitment to global education and leadership.</p>
 </div>
 
 ---
@@ -937,7 +937,7 @@ function innovate(challenge: Challenge): Solution {
 ```
 
 <div class="mt-4 esade-box info">
-💡 ESADE combines rigorous academics with real-world impact
+<i class="fas fa-lightbulb"></i> ESADE combines rigorous academics with real-world impact
 </div>
 
 ---
