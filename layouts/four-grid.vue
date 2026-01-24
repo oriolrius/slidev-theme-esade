@@ -160,6 +160,16 @@ defineProps<{
   filter: brightness(0) invert(1);
 }
 
+/* Font Awesome icons */
+.icon-circle :deep(i),
+.icon-circle :deep(.fa),
+.icon-circle :deep(.fas),
+.icon-circle :deep(.far),
+.icon-circle :deep(.fab) {
+  font-size: 1.25rem;
+  color: white;
+}
+
 .quadrant :deep(h3) {
   font-family: 'ESADE', 'Mabry Pro', sans-serif;
   font-size: 1.25rem;

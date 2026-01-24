@@ -26,9 +26,11 @@ defineProps<{
         <div class="icon-rule">
           <span class="line"></span>
           <span class="icon-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
+            <slot name="leftIcon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </slot>
           </span>
           <span class="line"></span>
         </div>
@@ -43,10 +45,12 @@ defineProps<{
         <div class="icon-rule">
           <span class="line"></span>
           <span class="icon-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
+            <slot name="rightIcon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </slot>
           </span>
           <span class="line"></span>
         </div>
@@ -163,6 +167,16 @@ defineProps<{
   color: white;
 }
 
+/* Font Awesome icons */
+.icon-circle :deep(i),
+.icon-circle :deep(.fa),
+.icon-circle :deep(.fas),
+.icon-circle :deep(.far),
+.icon-circle :deep(.fab) {
+  font-size: 1.4rem;
+  color: white;
+}
+
 .column-title {
   font-family: 'ESADE', 'Mabry Pro', sans-serif;
   font-size: 1.3rem;
@@ -199,14 +213,17 @@ defineProps<{
   border-radius: 4px;
   padding: 1rem 1.25rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.75rem;
 }
 
 .takeaway-area :deep(.callout-info)::before {
-  content: '\1F4AC';
-  font-size: 1rem;
+  content: '\f05a';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 1.25rem;
   flex-shrink: 0;
+  color: var(--esade-electric-blue, #00A7E1);
 }
 
 .takeaway-area :deep(p) {

@@ -1,23 +1,42 @@
 <script setup lang="ts">
-defineProps<{
-  image?: string
-  imagePosition?: 'left' | 'right'
-}>()
+import { computed } from 'vue'
+
+const props = defineProps({
+  image: String,
+  imagePosition: String,
+  imageWidth: String,
+  imageFocus: String
+})
+
+const containerStyle = computed(() => ({
+  '--image-width': props.imageWidth || '50%'
+}))
+
+const imageStyle = computed(() => ({
+  objectPosition: props.imageFocus || 'center'
+}))
 </script>
 
 <template>
-  <div class="cover-split" :class="{ 'image-right': imagePosition === 'right' }">
+  <div
+    class="cover-split"
+    :class="{ 'image-right': props.imagePosition === 'right' }"
+    :style="containerStyle"
+  >
     <!-- Image Panel -->
     <div class="image-panel">
-      <img v-if="image" :src="image" alt="" class="hero-image" />
+      <img
+        v-if="props.image"
+        :src="props.image"
+        alt=""
+        class="hero-image"
+        :style="imageStyle"
+      />
       <div v-else class="placeholder-gradient"></div>
     </div>
 
     <!-- Content Panel -->
     <div class="content-panel">
-      <div class="logo-area">
-        <img src="/esade-logo.svg" alt="ESADE" class="esade-logo" />
-      </div>
       <div class="content-wrapper">
         <slot />
       </div>
@@ -28,7 +47,7 @@ defineProps<{
 <style scoped>
 .cover-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: var(--image-width) 1fr;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -52,6 +71,7 @@ defineProps<{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* object-position is applied via inline style from imageFocus prop */
 }
 
 .placeholder-gradient {
@@ -86,17 +106,6 @@ defineProps<{
   background: var(--esade-white, #ffffff);
   padding: 5rem 6rem;
   position: relative;
-}
-
-.logo-area {
-  position: absolute;
-  bottom: 4rem;
-  right: 5rem;
-}
-
-.esade-logo {
-  height: 90px;
-  width: auto;
 }
 
 .content-wrapper {

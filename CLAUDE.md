@@ -4,6 +4,31 @@
 
 This is the **slidev-theme-esade** repository - a custom Slidev theme based on ESADE Brand Book 2025 and CTL design guidelines.
 
+## Brand Guidelines Reference
+
+**IMPORTANT:** Before making design changes, consult `ESADE_BRANDBOOK.md` for official brand guidelines.
+
+Key design principles from the brand book:
+- **Bold & Confident** - Strong typography, clear hierarchies
+- **Professional Excellence** - High standards in all visual communications
+- **Modern Heritage** - Balance traditional excellence with contemporary innovation
+- **Human-Centered** - Authentic, people-focused design
+
+### Cover/Title Slides (per brand book)
+- Large title in ESADE Font (serif)
+- Subtitle in Mabry Pro (sans-serif)
+- Navy blue background (#002E5D) with white text
+- Kumera gold (#83691F) accent (underline or bar)
+
+### Section Dividers
+- Full-bleed navy blue
+- Large white text, minimal content
+
+### Content Slides
+- White or light gray background
+- Navy headers, black body text
+- Generous white space
+
 ## Repository Structure
 
 ```

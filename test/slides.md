@@ -169,7 +169,7 @@ Your Name | Date
 layout: default
 ---
 
-# Default Layout
+# layout: default
 
 This is the default layout for content slides.
 
@@ -192,7 +192,7 @@ This is the default layout for content slides.
 layout: center
 ---
 
-# Layout: Center
+# layout: center
 
 Content is centered both horizontally and vertically
 
@@ -202,7 +202,7 @@ Perfect for impactful statements or transitions
 layout: two-cols
 ---
 
-# Layout: Two Columns
+# layout: two-cols
 
 ## Left Column
 
@@ -227,9 +227,14 @@ function demo() {
 }
 ```
 
+Badges:
+
 <div class="mt-4">
-<span class="esade-badge gold">Feature</span>
-<span class="esade-badge blue">New</span>
+<span class="esade-badge gold">Gold</span>
+<span class="esade-badge blue">Blue</span>
+<span class="esade-badge red">Red</span>
+<span class="esade-badge dark-blue">Dark Blue</span>
+<span class="esade-badge green">Green</span>
 </div>
 
 ---
@@ -250,110 +255,181 @@ Vue component layouts with enhanced features
 
 ---
 layout: cover-split
+image: /images/man-working-computer.jpg
+imageFocus: 70%
 ---
 
 # Layout: Cover Split
 
 ## 50/50 Image + Content
 
-A hands-on workshop for ESADE professors on transforming teaching materials into dynamic, interactive resources.
+Split your slide between an image and content.
 
-Props: `image`, `imagePosition`
+**Props:**
 
----
-layout: cover-split
-imagePosition: right
----
-
-# Cover Split (Right)
-
-## Image on Right Side
-
-Use `imagePosition: right` to flip the layout.
-
-The gradient placeholder appears when no `image` prop is specified.
-
-Perfect for opening and closing slides.
+- `image` - path to image file
+- `imagePosition` - `left` or `right` (which side the image appears)
+- `imageWidth` - e.g., `40%`, `60%` (space for image)
+- `imageFocus` - controls visible area:
+  - `left`, `center`, `right` - horizontal alignment
+  - `75%` - 75% from left (shows more right side)
+  - `25% 0%` - 25% from left, top edge
 
 ---
 layout: four-grid
 ---
 
 ::title::
-# Layout: Four Grid
+# layout: four-grid
+
+::icon1::
+<i class="fas fa-lightbulb"></i>
+
+::icon2::
+<i class="fas fa-users"></i>
+
+::icon3::
+<i class="fas fa-code"></i>
+
+::icon4::
+<i class="fas fa-rocket"></i>
 
 ::q1::
-### Quadrant 1
-Top-left content with icon separator. Great for key considerations.
+### Custom Icons
+Use `::icon1::` to `::icon4::` slots to override defaults.
+
+Supports **Font Awesome**!
 
 ::q2::
-### Quadrant 2
-Top-right content. Each quadrant has its own icon circle.
+### Font Awesome
+```html
+::icon2::
+<i class="fas fa-users"></i>
+```
 
 ::q3::
-### Quadrant 3
-Bottom-left content. Icons can be customized via slots.
+### SVG Icons
+```html
+::icon3::
+<svg viewBox="0 0 24 24">...</svg>
+```
 
 ::q4::
-### Quadrant 4
-Bottom-right content. Perfect for 4-point summaries.
+### Emoji Icons
+```html
+::icon4::
+🚀
+```
 
 ::callout::
-<div class="callout-warning">
-<div><strong>Callout Area:</strong> This bottom section spans full width for important notes or warnings.</div>
+<div class="callout-tip">
+<p><strong>Tip:</strong> If no icon slot is provided, default SVG icons are used. Browse icons at <a href="https://fontawesome.com/icons" target="_blank">fontawesome.com/icons</a></p>
 </div>
 
 ---
 layout: compare
-leftTitle: "DO's - Best Practices"
-rightTitle: "DON'Ts - Avoid These"
+leftTitle: "Check title"
+rightTitle: "Cross title"
 ---
 
 ::title::
-# Layout: Compare
+# layout: compare
 
 ::intro::
-Side-by-side comparison layout, perfect for Do's and Don'ts or pros/cons lists.
+Side-by-side comparison for Do's/Don'ts or pros/cons. Customize via props and icon slots.
+
+::leftIcon::
+<i class="fas fa-check"></i>
+
+::rightIcon::
+<i class="fas fa-xmark"></i>
 
 ::left::
-- Use clear, concise language
-- Include visual examples
-- Test on multiple devices
-- Follow brand guidelines
+### Frontmatter Props
+```yaml
+layout: compare
+leftTitle: "DO's"
+rightTitle: "DON'Ts"
+leftColor: green   # or blue
+rightColor: red    # or orange
+```
 
 ::right::
-- Don't overcrowd slides
-- Don't use off-brand colors
-- Don't skip accessibility
-- Don't forget mobile view
+### Icon Slots
+```html
+::leftIcon::
+<i class="fas fa-check"></i>
+
+::rightIcon::
+<i class="fas fa-xmark"></i>
+```
 
 ::takeaway::
 <div class="callout-info">
-<p><strong>Key takeaway:</strong> The compare layout uses color-coded icons (green checkmark, red exclamation) to visually distinguish columns.</p>
+<p><strong>Defaults:</strong> leftColor=green, rightColor=red. Icons: ✓ checkmark, ✗ cross</p>
 </div>
 
 ---
 layout: hero-cards
-heroHeight: 180px
+rows: 2
+card1Bg: "#E3EAF6"
+card1Border: "#002E5D"
+card2Bg: "#FFF8E1"
+card2Border: "#FF9800"
+card4Bg: "#E8F5E9"
+card4Border: "#4CAF50"
+card5Bg: "#FFEBEE"
+card5Border: "#E53935"
 ---
 
 ::title::
-# Layout: Hero Cards
+# layout: hero-cards
+
+::icon1::
+<i class="fas fa-palette"></i>
+
+::icon2::
+<i class="fas fa-border-all"></i>
 
 ::card1::
-### 1. Feature One
-Hero banner at top with customizable height. Cards below for key points.
+### Per-Card Background
+```yaml
+card1Bg: "#E3EAF6"
+card2Bg: "#FFF8E1"
+```
 
 ::card2::
-### 2. Feature Two
-Three equal-width cards with light gray background and rounded corners.
+### Per-Card Border
+```yaml
+card1Border: "#002E5D"
+card2Border: "#FF9800"
+```
 
 ::card3::
-### 3. Feature Three
-Great for introducing concepts or summarizing key features.
+### Default Style
+No `card3Bg` or `card3Border` = default gray background.
+
+::icon4::
+<i class="fas fa-layer-group"></i>
+
+::card4::
+### Global Defaults
+```yaml
+cardBg: white
+cardBorder: "#002E5D"
+```
+Apply to all cards.
+
+::card5::
+### Override Global
+Per-card props override global defaults.
+
+::card6::
+### Props Summary
+`heroImage`, `heroHeight`, `rows`, `cardBg`, `cardBorder`, `card1Bg`...`card6Bg`, `card1Border`...`card6Border`
 
 ::footer::
-Props: `heroImage`, `heroHeight`. The footer area spans full width for descriptions.
+**Global:** `cardBg`, `cardBorder` | **Per-card:** `card1Bg`...`card6Bg`, `card1Border`...`card6Border` | **Icons:** `::icon1::`...`::icon6::`
 
 ---
 layout: cards-grid
