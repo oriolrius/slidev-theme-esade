@@ -151,14 +151,15 @@ layout: section
 CSS-styled layouts inherited from Slidev
 
 ---
-layout: cover
+layout: cover-split
+image: /images/esade-campus.webp
 ---
 
-# Layout: Cover
+# Layout: Cover Split
 
-## Navy Gradient Background
+## ESADE Campus
 
-Classic centered title slide with ESADE branding
+Classic title slide with the beautiful ESADE campus image
 
 <div class="abs-br m-6 text-sm opacity-80">
 Your Name | Date

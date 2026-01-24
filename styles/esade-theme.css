@@ -187,18 +187,41 @@ pre.slidev-code,
   padding-left: calc(1.25rem - 3px);
 }
 
-/* Lists */
-ul, ol {
-  margin-left: 3rem;
+/* Lists - Explicit styling to override resets */
+.slidev-layout ul,
+.slidev-layout ol {
+  margin-left: 1.5rem !important;
+  padding-left: 1.5rem !important;
 }
 
-li {
-  margin-bottom: 1.2rem;
+.slidev-layout ul {
+  list-style-type: disc !important;
 }
 
-li::marker {
+.slidev-layout ol {
+  list-style-type: decimal !important;
+}
+
+/* Nested list levels */
+.slidev-layout ul ul {
+  list-style-type: circle !important;
+  margin-left: 1rem !important;
+}
+
+.slidev-layout ul ul ul {
+  list-style-type: square !important;
+}
+
+.slidev-layout li {
+  display: list-item !important;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+.slidev-layout li::marker {
   color: var(--esade-kumera);
   font-weight: bold;
+  font-size: 1.2em;
 }
 
 /* Blockquotes */
@@ -250,49 +273,75 @@ tr:hover {
   background-color: var(--esade-light-gray);
 }
 
-/* Cover Layout */
+/* Cover Layout - Bold & Confident per ESADE Brand Book */
 .slidev-layout.cover {
-  background: linear-gradient(135deg, var(--esade-navy) 0%, #004080 100%) !important;
+  background: var(--esade-navy) !important;
   color: var(--esade-white) !important;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 4rem;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .slidev-layout.cover h1,
 .slidev-layout.cover h2,
 .slidev-layout.cover h3 {
   color: var(--esade-white) !important;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   border-bottom: none !important;
+  position: relative;
+  z-index: 1;
 }
 
 .slidev-layout.cover h1 {
-  font-size: 2.8rem;
-  margin-bottom: 0.8rem;
+  font-size: 4.5rem !important;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Gold underline accent for h1 */
+.slidev-layout.cover h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--esade-kumera);
+  margin: 1.5rem auto 0;
+  border-radius: 2px;
 }
 
 .slidev-layout.cover h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.6rem;
-  opacity: 0.95;
+  font-family: 'Mabry Pro', sans-serif !important;
+  font-size: 2rem !important;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  letter-spacing: 0.02em;
 }
 
-.slidev-layout.cover p,
-.slidev-layout.cover div {
-  color: var(--esade-white) !important;
-  font-size: 1.1rem;
-  margin-top: 0.4rem;
-  opacity: 0.9;
+.slidev-layout.cover p {
+  font-family: 'Mabry Pro', sans-serif;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 1.3rem !important;
+  margin-top: 1.5rem;
+  max-width: 650px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
 .slidev-layout.cover strong {
   color: var(--esade-white);
 }
 
+/* Bottom kumera gold bar - clean brand accent */
 .slidev-layout.cover::after {
   content: '';
   position: absolute;
@@ -300,11 +349,20 @@ tr:hover {
   left: 0;
   right: 0;
   height: 8px;
-  background: linear-gradient(90deg,
-    var(--esade-kumera) 0%,
-    var(--esade-electric-blue) 33%,
-    var(--esade-emerald) 66%,
-    var(--esade-coral) 100%);
+  background: var(--esade-kumera);
+  z-index: 2;
+}
+
+/* ESADE logo positioning for cover */
+.slidev-layout.cover .esade-logo,
+.slidev-layout.cover img[src*="esade-logo"] {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 3rem;
+  height: 45px;
+  width: auto;
+  opacity: 1;
+  z-index: 2;
 }
 
 /* Section Layout */
