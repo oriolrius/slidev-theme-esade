@@ -168,6 +168,14 @@ pre code {
   padding: 0;
 }
 
+/* Code block text size modifiers */
+.text-sm pre code, .text-sm .shiki code { font-size: 1rem !important; }
+.text-base pre code, .text-base .shiki code { font-size: 1.2rem !important; }
+.text-lg pre code, .text-lg .shiki code { font-size: 1.4rem !important; }
+.text-xl pre code, .text-xl .shiki code { font-size: 1.6rem !important; }
+.text-2xl pre code, .text-2xl .shiki code { font-size: 1.8rem !important; }
+.text-3xl pre code, .text-3xl .shiki code { font-size: 2rem !important; }
+
 /* Slidev/Shiki code block overrides */
 .slidev-code,
 .shiki,
