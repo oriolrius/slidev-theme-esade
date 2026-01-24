@@ -194,6 +194,7 @@ pre code {
 .slidev-code .line,
 pre code .line {
   display: block;
+  min-height: 1.6em;
 }
 
 /* Line highlighting */

@@ -924,6 +924,8 @@ layout: default
 
 ESADE's approach to innovation includes embracing technology:
 
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2">
+
 ```typescript {|1-3|5-7|all}
 // Digital transformation at ESADE
 function innovate(challenge: Challenge): Solution {
@@ -935,8 +937,10 @@ function innovate(challenge: Challenge): Solution {
 }
 ```
 
+</div>
 
-<div class="mt-4 esade-box info">
+
+<div class="esade-box info absolute bottom-4 left-8 right-8">
 <i class="fas fa-lightbulb"></i> ESADE combines rigorous academics with real-world impact
 </div>
 
@@ -946,50 +950,49 @@ layout: default
 
 # Code Block Styling
 
-<div class="grid grid-cols-3 gap-6">
+<div class="grid grid-cols-2 gap-8">
 <div>
 
 ## Line Numbers
-Hover code to toggle. Or use classes:
+Hover any code block to show toggle button, or wrap in a div:
 
-| Class | Effect |
-|-------|--------|
-| `line-numbers` | Show |
-| `no-line-numbers` | Hide |
+`<div class="line-numbers">` + code block + `</div>`
 
-</div>
-<div>
+## Width Control
+Wrap code in div with UnoCSS width classes:
+- `w-1/2` → 50% | `w-2/3` → 66% | `w-3/4` → 75% | `w-full` → 100%
 
-## Width & Position
-
-| Class | Effect |
-|-------|--------|
-| `w-1/2` | 50% width |
-| `w-2/3` | 66% width |
-| `w-3/4` | 75% width |
-| `mx-auto` | Center |
-| `ml-auto` | Right align |
-| `mr-auto` | Left align |
+## Alignment
+- `mx-auto` → Center | `ml-auto` → Right | `mr-auto` → Left
 
 </div>
 <div>
 
-## Examples
+## Live Examples
 
-<div class="w-2/3 mx-auto line-numbers">
+<div class="w-3/4 mx-auto line-numbers mb-2">
 
 ```typescript
-// Centered, 66% width
-const x = 42
+// Centered (mx-auto), 75% width, with line numbers
+const centered = true
 ```
 
 </div>
 
-<div class="w-1/2 ml-auto">
+<div class="w-1/2 ml-auto mb-2">
 
 ```typescript
-// Right aligned, 50%
-const y = 99
+// Right aligned (ml-auto), 50% width
+const right = "aligned"
+```
+
+</div>
+
+<div class="w-1/2">
+
+```typescript
+// Left (default), 50% width
+const left = "side"
 ```
 
 </div>
@@ -997,8 +1000,8 @@ const y = 99
 </div>
 </div>
 
-<div class="callout-tip no-icon abs-b w-full left-0 mx-8 mb-4">
-<p class="text-lg"><i class="fas fa-code mr-2"></i>Combine width classes with alignment for precise code block positioning.</p>
+<div class="callout-tip no-icon absolute bottom-4 left-8 right-8">
+<p class="text-lg"><i class="fas fa-code mr-2"></i>Wrap code blocks in a div with classes to control width and position.</p>
 </div>
 
 ---
