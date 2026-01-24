@@ -537,119 +537,225 @@ Reusable styling classes
 layout: default
 ---
 
-# Accent Boxes (esade-box)
+# CSS Component: esade-box
 
-Original theme boxes with colored left borders:
+<div class="grid grid-cols-2 gap-8">
+<div>
 
-<div class="grid grid-cols-2 gap-4 mt-4">
-
+## Usage
+```html
 <div class="esade-box info">
-<strong>Info Box</strong><br>
-Electric blue accent for informational content.
+  Content here...
+</div>
+```
+
+## Variants
+| Class | Color | Use Case |
+|-------|-------|----------|
+| `info` | Electric Blue | Information |
+| `success` | Emerald | Positive |
+| `warning` | Yellow | Caution |
+| `highlight` | Kumera Gold | Emphasis |
+
+</div>
+<div>
+
+## Live Examples
+
+<div class="esade-box info mb-2">
+<strong>info:</strong> Electric blue accent
 </div>
 
-<div class="esade-box success">
-<strong>Success Box</strong><br>
-Emerald accent for positive messages.
+<div class="esade-box success mb-2">
+<strong>success:</strong> Emerald accent
 </div>
 
-<div class="esade-box warning">
-<strong>Warning Box</strong><br>
-Yellow accent for cautions.
+<div class="esade-box warning mb-2">
+<strong>warning:</strong> Yellow accent
 </div>
 
 <div class="esade-box highlight">
-<strong>Highlight Box</strong><br>
-Kumera gold accent for emphasis.
+<strong>highlight:</strong> Kumera gold accent
 </div>
 
+</div>
 </div>
 
 ---
 layout: default
 ---
 
-# Callout Boxes (CTL-Style)
+# CSS Component: callout-*
 
-New callout boxes inspired by ESADE CTL design:
+<div class="grid grid-cols-2 gap-8">
+<div>
 
+## Usage
+```html
 <div class="callout-warning">
-<div><strong>Warning Callout:</strong> Cream background with orange border. Perfect for warnings or recommendations.</div>
+  <p>Your message here</p>
+</div>
+```
+
+## Variants
+| Class | Background | Icon |
+|-------|------------|------|
+| `callout-warning` | Cream | ⚠️ |
+| `callout-info` | Light Blue | ℹ️ |
+| `callout-tip` | Light Green | 💡 |
+| `callout-note` | Light Purple | 📝 |
+| `callout-secure` | Light Gray | 🔒 |
+
+</div>
+<div>
+
+## Live Examples
+
+<div class="callout-warning mb-2">
+<p><strong>warning:</strong> Cream + orange border</p>
 </div>
 
-<div class="callout-info">
-<p><strong>Info Callout:</strong> Light blue background for key takeaways.</p>
+<div class="callout-info mb-2">
+<p><strong>info:</strong> Light blue background</p>
 </div>
 
-<div class="callout-tip">
-<p><strong>Tip Callout:</strong> Light green background for helpful tips.</p>
+<div class="callout-tip mb-2">
+<p><strong>tip:</strong> Light green background</p>
 </div>
 
-<div class="callout-note">
-<p><strong>Note Callout:</strong> Light purple background for additional notes.</p>
+<div class="callout-note mb-2">
+<p><strong>note:</strong> Light purple background</p>
 </div>
 
 <div class="callout-secure">
-<div><strong>Secure Callout:</strong> For security or privacy-related messages.</div>
+<p><strong>secure:</strong> Security messages</p>
+</div>
+
+</div>
 </div>
 
 ---
 layout: default
 ---
 
-# Buttons, Badges & Step Numbers
+# CSS Components: Buttons, Badges, Steps
 
-## Buttons
+<div class="grid grid-cols-3 gap-6">
+<div>
 
-<div class="flex gap-4 mt-4 mb-6">
-<a class="esade-button">Primary Button</a>
-<a class="esade-button secondary">Secondary Button</a>
+## esade-button
+```html
+<a class="esade-button">
+  Primary
+</a>
+<a class="esade-button secondary">
+  Secondary
+</a>
+```
+
+<div class="flex gap-2 mt-4">
+<a class="esade-button">Primary</a>
+<a class="esade-button secondary">Secondary</a>
 </div>
 
-## Badges
+</div>
+<div>
 
-<div class="flex gap-2 flex-wrap mt-4 mb-6">
+## esade-badge
+```html
+<span class="esade-badge">Default</span>
+<span class="esade-badge gold">Gold</span>
+<span class="esade-badge blue">Blue</span>
+<span class="esade-badge coral">Coral</span>
+```
+
+<div class="flex gap-2 flex-wrap mt-4">
 <span class="esade-badge">Default</span>
 <span class="esade-badge gold">Gold</span>
 <span class="esade-badge blue">Blue</span>
 <span class="esade-badge coral">Coral</span>
 </div>
 
-## Step Numbers
+</div>
+<div>
 
-<div class="flex gap-4 items-center mt-4">
+## step-number
+```html
 <span class="step-number">1</span>
-<span class="step-number">2</span>
-<span class="step-number">3</span>
-<span class="step-number gold">4</span>
-<span class="step-number blue">5</span>
+<span class="step-number gold">2</span>
+<span class="step-number blue">3</span>
 <span class="step-number small">S</span>
 <span class="step-number large">L</span>
+```
+
+<div class="flex gap-2 items-center mt-4">
+<span class="step-number">1</span>
+<span class="step-number gold">2</span>
+<span class="step-number blue">3</span>
+<span class="step-number small">S</span>
+<span class="step-number large">L</span>
+</div>
+
+</div>
 </div>
 
 ---
 layout: default
 ---
 
-# Feature Cards
+# CSS Component: feature-card
 
-<div class="grid grid-cols-3 gap-4 mt-6">
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+## Usage
+```html
+<div class="feature-card">
+  <h3>Card Title</h3>
+  <p>Card content goes here...</p>
+</div>
+```
+
+## Styling
+- Light gray background (`#F8F9FA`)
+- Rounded corners (`8px`)
+- Padding: `1.5rem`
+- Best used in grid layouts
+
+## Grid Example
+```html
+<div class="grid grid-cols-3 gap-4">
+  <div class="feature-card">...</div>
+  <div class="feature-card">...</div>
+  <div class="feature-card">...</div>
+</div>
+```
+
+</div>
+<div>
+
+## Live Examples
+
+<div class="grid grid-cols-1 gap-4">
 
 <div class="feature-card">
-<h3>Card Title One</h3>
-<p>Feature cards have a light gray background with rounded corners.</p>
+<h3>Feature Card</h3>
+<p>Light gray background with rounded corners. Ideal for organizing content.</p>
 </div>
 
 <div class="feature-card">
-<h3>Card Title Two</h3>
-<p>Use these for organizing content into digestible chunks.</p>
+<h3>Multiple Cards</h3>
+<p>Use with UnoCSS grid utilities: <code>grid grid-cols-2 gap-4</code></p>
 </div>
 
 <div class="feature-card">
-<h3>Card Title Three</h3>
-<p>Cards scale well in grid layouts for visual balance.</p>
+<h3>Flexible Content</h3>
+<p>Cards can contain headings, text, lists, or any HTML content.</p>
 </div>
 
+</div>
+
+</div>
 </div>
 
 ---
