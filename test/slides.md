@@ -432,46 +432,98 @@ Per-card props override global defaults.
 **Global:** `cardBg`, `cardBorder` | **Per-card:** `card1Bg`...`card6Bg`, `card1Border`...`card6Border` | **Icons:** `::icon1::`...`::icon6::`
 
 ---
-layout: image
-background: cream
+layout: cards
+rows: 2
+card1Bg: white
+card1Border: "#002E5D"
+card2Bg: white
+card2Border: "#002E5D"
+card3Bg: white
+card3Border: "#002E5D"
+card4Bg: white
+card4Border: "#002E5D"
+card5Bg: white
+card5Border: "#002E5D"
+card6Bg: white
+card6Border: "#002E5D"
 ---
 
 ::title::
-# layout: image
+# layout: image (properties)
+
+::icon1::
+<i class="fas fa-bullseye"></i>
+
+::icon2::
+<i class="fas fa-palette"></i>
+
+::icon3::
+<i class="fas fa-image"></i>
+
+::icon4::
+<i class="fas fa-crop-alt"></i>
+
+::icon5::
+<i class="fas fa-adjust"></i>
+
+::icon6::
+<i class="fas fa-layer-group"></i>
+
+::card1::
+### Purpose
+Full screen with titles on the top of the image. Clean layout for visual content. Diagrams, infographics, screenshots, or full-bleed photography.
+
+::card2::
+### background
+```yaml
+background: cream
+```
+Options: `white`, `cream`, `light-blue`, `light-gray`
+
+::card3::
+### image
+```yaml
+image: /images/photo.jpg
+```
+Full-screen background image (1920×1080 recommended).
+
+::card4::
+### imageFocus
+```yaml
+imageFocus: "50% 30%"
+```
+Crop position: `center`, `top`, `bottom`, or `X% Y%` values.
+
+::card5::
+### imageOverlay
+```yaml
+imageOverlay: "0.4"
+```
+Dark overlay (0-1) for text readability.
+
+::card6::
+### imageSize (zoom)
+```yaml
+imageSize: "150%"
+```
+**Zoom:** `150%`, `200%` (zoom in). Use with `imageFocus` to pan. Default: `cover`.
+
+::footer::
+**Slots:** `::title::`, `::subtitle::`, `default`, `::brand::` | **Next slide:** 4K image demo with crop and resize
+
+---
+layout: image
+image: /images/barcelona-cityscape-4k.jpg
+imageFocus: "30% 60%"
+imageSize: "150%"
+imageOverlay: "0.35"
+---
+
+::title::
+# 4K Image Demo: Zoom + Pan
 
 ::subtitle::
-Full-width layout for images, diagrams, and visual content. ESADE logo appears top-right automatically.
-
-<div style="display: flex; gap: 3rem; height: 100%; align-items: center; justify-content: center;">
-  <div style="flex: 1; max-width: 280px;">
-    <h3 style="color: var(--esade-navy); margin-bottom: 1rem;">Props</h3>
-    <div style="font-family: monospace; font-size: 0.85rem; background: white; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
-      <div><strong>background:</strong></div>
-      <div style="padding-left: 1rem;">white</div>
-      <div style="padding-left: 1rem;">cream (default)</div>
-      <div style="padding-left: 1rem;">light-blue</div>
-      <div style="padding-left: 1rem;">light-gray</div>
-    </div>
-  </div>
-  <div style="flex: 1; max-width: 280px;">
-    <h3 style="color: var(--esade-navy); margin-bottom: 1rem;">Slots</h3>
-    <div style="font-family: monospace; font-size: 0.85rem; background: white; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
-      <div><strong>::title::</strong> - heading</div>
-      <div><strong>::subtitle::</strong> - description</div>
-      <div><strong>default</strong> - main content</div>
-      <div><strong>::brand::</strong> - bottom-right</div>
-    </div>
-  </div>
-  <div style="flex: 1; max-width: 280px;">
-    <h3 style="color: var(--esade-navy); margin-bottom: 1rem;">Use Cases</h3>
-    <div style="font-size: 0.9rem; background: white; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
-      <div>• Full-bleed images</div>
-      <div>• Diagrams & charts</div>
-      <div>• Infographics</div>
-      <div>• Screenshots</div>
-    </div>
-  </div>
-</div>
+`imageSize: "150%"` zooms in 1.5× — `imageFocus: "30% 60%"` pans to left-center of the zoomed image
 
 ---
 layout: section

@@ -1,27 +1,40 @@
 <script setup lang="ts">
 defineProps<{
   background?: 'white' | 'cream' | 'light-blue' | 'light-gray'
+  // Full-screen image props
+  image?: string
+  imageFocus?: string  // e.g., 'center', 'top', '50% 30%'
+  imageOverlay?: string  // e.g., '0.3' for dark overlay opacity
+  imageSize?: string  // e.g., 'cover', 'contain', '120%', 'auto'
 }>()
 </script>
 
 <template>
-  <div class="image-layout" :class="background || 'cream'">
-    <!-- Logo -->
-    <div class="logo-area">
-      <img src="/esade-logo.svg" alt="ESADE" class="esade-logo" />
+  <div class="image-layout" :class="[!image && (background || 'cream'), { 'has-bg-image': image }]">
+    <!-- Full-screen background image -->
+    <div v-if="image" class="bg-image-container">
+      <div
+        class="bg-image"
+        :style="{
+          backgroundImage: `url(${image})`,
+          backgroundPosition: imageFocus || 'center',
+          backgroundSize: imageSize || 'cover'
+        }"
+      ></div>
+      <div v-if="imageOverlay" class="bg-overlay" :style="{ opacity: imageOverlay }"></div>
     </div>
 
     <!-- Title Area -->
-    <div class="title-area">
+    <div class="title-area" :class="{ 'on-image': image }">
       <slot name="title" />
     </div>
 
     <!-- Subtitle/Description -->
-    <div class="subtitle-area">
+    <div class="subtitle-area" :class="{ 'on-image': image }">
       <slot name="subtitle" />
     </div>
 
-    <!-- Main Infographic Area -->
+    <!-- Main Content Area -->
     <div class="image-content">
       <slot />
     </div>
@@ -42,6 +55,48 @@ defineProps<{
   position: relative;
 }
 
+/* Full-screen background image */
+.bg-image-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: #000;
+}
+
+.image-layout.has-bg-image {
+  background: transparent;
+}
+
+.image-layout.has-bg-image .title-area,
+.image-layout.has-bg-image .subtitle-area,
+.image-layout.has-bg-image .image-content,
+.image-layout.has-bg-image .brand-area {
+  position: relative;
+  z-index: 1;
+}
+
+/* Text styling when on image */
+.title-area.on-image :deep(h1) {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle-area.on-image :deep(p) {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 .image-layout.white {
   background: #ffffff;
 }
@@ -58,19 +113,7 @@ defineProps<{
   background: var(--esade-light-gray, #F5F5F5);
 }
 
-.logo-area {
-  position: absolute;
-  top: 1.5rem;
-  right: 2.5rem;
-}
-
-.esade-logo {
-  height: 48px;
-  width: auto;
-}
-
 .title-area {
-  padding-right: 100px;
   margin-bottom: 0.25rem;
 }
 
