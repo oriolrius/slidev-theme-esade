@@ -184,7 +184,12 @@ pre.slidev-code,
   color: var(--code-text);
 }
 
-/* Fix code block line alignment */
+/* Fix code block line alignment - use flex to avoid first-line offset */
+pre code {
+  display: flex;
+  flex-direction: column;
+}
+
 .shiki .line,
 .slidev-code .line,
 pre code .line {
