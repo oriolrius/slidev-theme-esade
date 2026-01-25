@@ -6,7 +6,7 @@ ESADE branded theme for [Slidev](https://sli.dev) presentations, based on the ES
 
 - ESADE brand colors (Navy, Kumera gold, Electric Blue, etc.)
 - Custom ESADE and Mabry Pro fonts
-- 11 styled layouts for various presentation needs
+- 12 styled layouts for various presentation needs
 - Custom CSS classes for boxes, buttons, badges, and callouts
 - Responsive design with print support
 - Gradient progress bar and branded footer
@@ -329,6 +329,57 @@ Studio offers features that transform your documents into various formats.
 
 Props:
 - `background`: `'white'`, `'cream'` (default), `'light-blue'`, `'light-gray'`
+
+#### Concepts
+
+Grid layout for showcasing concepts with large Font Awesome icons, titles, and optional descriptions. Perfect for key principles, values, or feature highlights.
+
+```md
+---
+layout: concepts
+cols: 3
+rows: 1
+---
+
+::title::
+# Our Core Values
+
+::icon1::
+<i class="fas fa-lightbulb"></i>
+
+::concept1::
+### Innovation
+
+Embrace creative thinking and challenge conventional approaches.
+
+::icon2::
+<i class="fas fa-users"></i>
+
+::concept2::
+### Collaboration
+
+Build diverse teams where every voice contributes.
+
+::icon3::
+<i class="fas fa-chart-line"></i>
+
+::concept3::
+### Growth
+
+Pursue continuous improvement through learning.
+```
+
+Props:
+- `cols`: Number of columns (default: `3`)
+- `rows`: Number of rows (default: `1`)
+
+Slots:
+- `title`: Slide title
+- `icon1` through `icon9`: Large Font Awesome icons
+- `concept1` through `concept9`: Title (h3) and optional paragraph description
+- `footer`: Optional footer text
+
+Icon/text sizes automatically adjust based on grid dimensions.
 
 ---
 

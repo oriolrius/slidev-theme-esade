@@ -528,6 +528,139 @@ imageOverlay: "0.35"
 `imageSize: "150%"` zooms in 1.5× — `imageFocus: "30% 60%"` pans to left-center of the zoomed image
 
 ---
+layout: concepts
+cols: 3
+---
+
+::title::
+# layout: concepts (3 columns)
+
+::icon1::
+<i class="fas fa-lightbulb"></i>
+
+::concept1::
+### Innovation
+
+Embrace creative thinking and challenge conventional approaches to drive breakthrough solutions.
+
+::icon2::
+<i class="fas fa-users"></i>
+
+::concept2::
+### Collaboration
+
+Build diverse teams and foster inclusive environments where every voice contributes to success.
+
+::icon3::
+<i class="fas fa-chart-line"></i>
+
+::concept3::
+### Growth
+
+Pursue continuous improvement through learning, adaptation, and measured progress.
+
+---
+layout: concepts
+cols: 2
+---
+
+::title::
+# layout: concepts (2 columns)
+
+::icon1::
+<i class="fas fa-shield-alt"></i>
+
+::concept1::
+### Security First
+
+Protect your data with enterprise-grade encryption and compliance standards.
+
+::icon2::
+<i class="fas fa-rocket"></i>
+
+::concept2::
+### Fast Deployment
+
+Ship features quickly with automated CI/CD pipelines and zero-downtime releases.
+
+---
+layout: concepts
+cols: 3
+rows: 2
+---
+
+::title::
+# layout: concepts (3×2 grid)
+
+::icon1::
+<i class="fas fa-code"></i>
+
+::concept1::
+### Clean Code
+
+::icon2::
+<i class="fas fa-database"></i>
+
+::concept2::
+### Data Driven
+
+::icon3::
+<i class="fas fa-cloud"></i>
+
+::concept3::
+### Cloud Native
+
+::icon4::
+<i class="fas fa-lock"></i>
+
+::concept4::
+### Secure by Default
+
+::icon5::
+<i class="fas fa-sync"></i>
+
+::concept5::
+### Continuous Delivery
+
+::icon6::
+<i class="fas fa-cogs"></i>
+
+::concept6::
+### Automation First
+
+---
+layout: concepts
+cols: 4
+---
+
+::title::
+# layout: concepts (4 columns, titles only)
+
+::icon1::
+<i class="fas fa-graduation-cap"></i>
+
+::concept1::
+### Education
+
+::icon2::
+<i class="fas fa-briefcase"></i>
+
+::concept2::
+### Business
+
+::icon3::
+<i class="fas fa-globe"></i>
+
+::concept3::
+### Global Reach
+
+::icon4::
+<i class="fas fa-handshake"></i>
+
+::concept4::
+### Partnership
+
+---
 layout: section
 ---
 

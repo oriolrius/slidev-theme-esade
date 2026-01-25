@@ -129,6 +129,7 @@ Without this symlink, fonts return HTML error pages instead of WOFF2 files.
 | `hero-cards` | `heroImage`, `heroHeight` | Hero banner + 3 cards |
 | `cards-grid` | `columns` (2 or 3) | Image cards grid |
 | `infographic` | `background` | Full-width visual layout |
+| `concepts` | `cols`, `rows` | Grid of large icons + titles/descriptions |
 
 ## CSS Components
 
