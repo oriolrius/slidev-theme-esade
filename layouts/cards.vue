@@ -204,6 +204,10 @@ const hasCardBorder = (n: number) =>
   display: flex;
   flex-direction: column;
   height: 100%;
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 1.4rem;
+  color: #444;
+  line-height: 1.5;
 }
 
 .feature-card.has-border {
@@ -257,23 +261,6 @@ const hasCardBorder = (n: number) =>
   color: var(--esade-navy, #002E5D);
   margin: 0 0 0.6rem 0;
   line-height: 1.3;
-}
-
-.feature-card :deep(p) {
-  font-family: 'Mabry Pro', sans-serif;
-  font-size: 1.4rem;
-  color: #444;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.feature-card :deep(ul),
-.feature-card :deep(ol),
-.feature-card :deep(li) {
-  font-family: 'Mabry Pro', sans-serif;
-  font-size: 1.4rem !important;
-  color: #444;
-  line-height: 1.5;
 }
 
 .bottom-text {
