@@ -670,6 +670,12 @@ tr:hover {
   font-size: 1.4rem;
 }
 
+.esade-box ul,
+.esade-box ol,
+.esade-box li {
+  font-size: 1.4rem !important;
+}
+
 .esade-box.info {
   background-color: rgba(0, 167, 225, 0.1);
   border-left-color: var(--esade-electric-blue);

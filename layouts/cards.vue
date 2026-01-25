@@ -267,6 +267,15 @@ const hasCardBorder = (n: number) =>
   margin: 0;
 }
 
+.feature-card :deep(ul),
+.feature-card :deep(ol),
+.feature-card :deep(li) {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: 1.4rem !important;
+  color: #444;
+  line-height: 1.5;
+}
+
 .bottom-text {
   padding: 0.75rem 2.5rem 1.5rem;
   flex-shrink: 0;
