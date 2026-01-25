@@ -261,7 +261,7 @@ const hasCardBorder = (n: number) =>
 
 .feature-card :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   color: #444;
   line-height: 1.5;
   margin: 0;
