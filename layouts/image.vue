@@ -156,7 +156,7 @@ const titleColorValue = getColor(props.titleColor)
 
 .subtitle-area :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: var(--esade-text-base, 1.5rem);
   color: #444;
   line-height: 1.5;
   margin: 0;
@@ -223,7 +223,7 @@ const titleColorValue = getColor(props.titleColor)
 
 .image-content :deep(.info-item h4) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.9rem;
+  font-size: var(--esade-text-base, 1.5rem);
   font-weight: 700;
   color: var(--esade-navy, #002E5D);
   margin: 0 0 0.25rem 0;
@@ -231,7 +231,7 @@ const titleColorValue = getColor(props.titleColor)
 
 .image-content :deep(.info-item p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.75rem;
+  font-size: var(--esade-text-base, 1.5rem);
   color: #555;
   line-height: 1.4;
   margin: 0;
@@ -250,7 +250,7 @@ const titleColorValue = getColor(props.titleColor)
 
 .brand-area :deep(span) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.75rem;
+  font-size: var(--esade-text-sm, 1.2rem);
   color: #666;
 }
 </style>

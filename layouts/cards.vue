@@ -205,7 +205,7 @@ const hasCardBorder = (n: number) =>
   flex-direction: column;
   height: 100%;
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 1.4rem;
+  font-size: var(--esade-text-base, 1.5rem);
   color: #444;
   line-height: 1.5;
 }
@@ -250,17 +250,27 @@ const hasCardBorder = (n: number) =>
 .icon-circle :deep(.fas),
 .icon-circle :deep(.far),
 .icon-circle :deep(.fab) {
-  font-size: 1.1rem;
+  font-size: var(--esade-icon-sm, 1.4rem);
   color: white;
 }
 
 .feature-card :deep(h3) {
   font-family: 'ESADE', 'Mabry Pro', sans-serif;
-  font-size: 1.15rem;
+  font-size: var(--esade-text-lg, 1.6rem);
   font-weight: 600;
   color: var(--esade-navy, #002E5D);
   margin: 0 0 0.6rem 0;
   line-height: 1.3;
+}
+
+.feature-card :deep(p),
+.feature-card :deep(li) {
+  font-size: var(--esade-text-base, 1.5rem);
+}
+
+.feature-card :deep(ul),
+.feature-card :deep(ol) {
+  font-size: var(--esade-text-base, 1.5rem);
 }
 
 .bottom-text {
@@ -270,7 +280,7 @@ const hasCardBorder = (n: number) =>
 
 .bottom-text :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: var(--esade-text-base, 1.5rem);
   color: #333;
   line-height: 1.6;
   margin: 0;

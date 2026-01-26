@@ -69,6 +69,19 @@
   /* Code Block Colors - High Contrast Dark Blue */
   --code-bg: #0a1628;
   --code-text: #e6edf3;
+
+  /* Typography Scale - Presentation-optimized sizes */
+  --esade-text-xs: 1rem;        /* 16px - fine print only */
+  --esade-text-sm: 1.2rem;      /* 19px - secondary/meta */
+  --esade-text-base: 1.5rem;    /* 24px - body text minimum */
+  --esade-text-lg: 1.6rem;      /* 26px - emphasized body */
+  --esade-text-xl: 1.8rem;      /* 29px - subtitles */
+  --esade-text-2xl: 2rem;       /* 32px - small titles */
+  --esade-text-3xl: 2.4rem;     /* 38px - section titles */
+  --esade-text-4xl: 2.8rem;     /* 45px - major titles */
+  --esade-icon-sm: 1.4rem;      /* icons in circles */
+  --esade-icon-md: 1.8rem;      /* standalone icons */
+  --esade-icon-lg: 2.25rem;     /* large icons */
 }
 
 /* Global Slide Styles */
@@ -383,7 +396,7 @@ blockquote {
 }
 
 blockquote p {
-  font-size: 1.1rem;
+  font-size: var(--esade-text-base) !important;
   margin: 0;
 }
 
@@ -667,13 +680,14 @@ tr:hover {
   border-radius: 8px;
   margin: 1.5rem 0;
   border-left: 5px solid;
-  font-size: 1.4rem;
+  font-size: var(--esade-text-base);
 }
 
+.esade-box p,
 .esade-box ul,
 .esade-box ol,
 .esade-box li {
-  font-size: 1.4rem !important;
+  font-size: var(--esade-text-base) !important;
 }
 
 .esade-box.info {
@@ -706,7 +720,7 @@ tr:hover {
   border-radius: 4px;
   font-family: 'Mabry Pro', sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: var(--esade-text-sm);
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -734,7 +748,7 @@ tr:hover {
   color: var(--esade-white);
   border-radius: 20px;
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 1.4rem;
+  font-size: var(--esade-text-lg);
   font-weight: 400;
   margin: 0.2rem;
 }
@@ -856,7 +870,7 @@ tr:hover {
   content: '\f071';
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
-  font-size: 1.1rem;
+  font-size: var(--esade-icon-md);
   flex-shrink: 0;
   line-height: 1.4;
   color: #e65100;
@@ -865,7 +879,7 @@ tr:hover {
 .callout-warning h4,
 .callout-warning strong:first-child {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 1rem;
+  font-size: var(--esade-text-lg);
   font-weight: 700;
   color: var(--esade-navy);
   margin: 0 0 0.25rem 0;
@@ -874,7 +888,7 @@ tr:hover {
 
 .callout-warning p {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: var(--esade-text-base);
   color: #333;
   line-height: 1.5;
   margin: 0;
@@ -895,7 +909,7 @@ tr:hover {
   content: '\f05a';
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
-  font-size: 1rem;
+  font-size: var(--esade-icon-md);
   flex-shrink: 0;
   line-height: 1.4;
   color: var(--esade-navy);
@@ -903,7 +917,7 @@ tr:hover {
 
 .callout-info p {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: var(--esade-text-base);
   color: #333;
   line-height: 1.5;
   margin: 0;
@@ -930,7 +944,7 @@ tr:hover {
   content: '\f0eb';
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: var(--esade-icon-lg);
   flex-shrink: 0;
   line-height: 1.4;
   color: var(--esade-emerald);
@@ -938,7 +952,7 @@ tr:hover {
 
 .callout-tip p {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 1.6rem;
+  font-size: var(--esade-text-xl);
   color: #333;
   line-height: 1.5;
   margin: 0;
@@ -978,7 +992,7 @@ tr:hover {
   content: '\f249';
   font-family: 'Font Awesome 6 Free';
   font-weight: 400;
-  font-size: 1rem;
+  font-size: var(--esade-icon-md);
   flex-shrink: 0;
   line-height: 1.4;
   color: #9333EA;
@@ -986,7 +1000,7 @@ tr:hover {
 
 .callout-note p {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: var(--esade-text-base);
   color: #333;
   line-height: 1.5;
   margin: 0;
@@ -1007,7 +1021,7 @@ tr:hover {
   content: '\f023';
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
-  font-size: 1rem;
+  font-size: var(--esade-icon-md);
   flex-shrink: 0;
   line-height: 1.4;
   color: #f59e0b;
@@ -1015,7 +1029,7 @@ tr:hover {
 
 .callout-secure p {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: var(--esade-text-base);
   color: #333;
   line-height: 1.5;
   margin: 0;
@@ -1115,7 +1129,7 @@ tr:hover {
 
 .feature-card h3 {
   font-family: 'ESADE', 'Mabry Pro', sans-serif;
-  font-size: 1.2rem;
+  font-size: var(--esade-text-lg);
   font-weight: 600;
   color: var(--esade-navy);
   margin: 0 0 0.75rem 0;
@@ -1123,7 +1137,7 @@ tr:hover {
 
 .feature-card p {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: var(--esade-text-base);
   color: #444;
   line-height: 1.5;
   margin: 0;
@@ -1162,13 +1176,13 @@ tr:hover {
 
 .image-card .overlay h4 {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 1.1rem;
+  font-size: var(--esade-text-base);
   font-weight: 700;
   margin: 0 0 0.25rem 0;
 }
 
 .image-card .overlay .meta {
-  font-size: 0.8rem;
+  font-size: var(--esade-text-sm);
   opacity: 0.9;
 }
 
@@ -1178,7 +1192,7 @@ tr:hover {
 
 .image-card .content p {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.9rem;
+  font-size: var(--esade-text-base);
   color: #444;
   line-height: 1.5;
   margin: 0 0 0.75rem 0;

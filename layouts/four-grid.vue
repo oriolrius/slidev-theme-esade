@@ -166,13 +166,13 @@ defineProps<{
 .icon-circle :deep(.fas),
 .icon-circle :deep(.far),
 .icon-circle :deep(.fab) {
-  font-size: 1.25rem;
+  font-size: var(--esade-icon-sm, 1.4rem);
   color: white;
 }
 
 .quadrant :deep(h3) {
   font-family: 'ESADE', 'Mabry Pro', sans-serif;
-  font-size: 1.25rem;
+  font-size: var(--esade-text-lg, 1.6rem);
   font-weight: 600;
   color: var(--esade-navy, #002E5D);
   margin-bottom: 0.5rem;
@@ -180,7 +180,7 @@ defineProps<{
 
 .quadrant :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: var(--esade-text-base, 1.5rem);
   color: #444;
   line-height: 1.5;
   margin: 0;
@@ -203,14 +203,14 @@ defineProps<{
 
 .callout-area :deep(.callout-warning)::before {
   content: '\26A0';
-  font-size: 1.2rem;
+  font-size: var(--esade-icon-md, 1.8rem);
   color: #FF9800;
   flex-shrink: 0;
 }
 
 .callout-area :deep(h4) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 1rem;
+  font-size: var(--esade-text-lg, 1.6rem);
   font-weight: 700;
   color: var(--esade-navy, #002E5D);
   margin: 0 0 0.25rem 0;
@@ -218,7 +218,7 @@ defineProps<{
 
 .callout-area :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.9rem;
+  font-size: var(--esade-text-base, 1.5rem);
   color: #333;
   line-height: 1.5;
   margin: 0;

@@ -20,16 +20,16 @@ const getIconSize = () => {
 
 const getTitleSize = () => {
   const total = columns * rows
-  if (total <= 3) return '1.6rem'
-  if (total <= 6) return '1.4rem'
-  return '1.2rem'
+  if (total <= 3) return '1.8rem'
+  if (total <= 6) return '1.6rem'
+  return '1.4rem'
 }
 
 const getDescSize = () => {
   const total = columns * rows
-  if (total <= 3) return '1.2rem'
-  if (total <= 6) return '1.05rem'
-  return '0.95rem'
+  if (total <= 3) return '1.5rem'
+  if (total <= 6) return '1.4rem'
+  return '1.2rem'
 }
 </script>
 
@@ -246,7 +246,7 @@ const getDescSize = () => {
 
 .concept-content :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: var(--desc-size, 1.1rem);
+  font-size: var(--desc-size, 1.4rem);
   color: #555;
   line-height: 1.5;
   margin: 0;
@@ -260,7 +260,7 @@ const getDescSize = () => {
 
 .footer-area :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: var(--esade-text-base, 1.5rem);
   color: #666;
   margin: 0;
   text-align: center;
