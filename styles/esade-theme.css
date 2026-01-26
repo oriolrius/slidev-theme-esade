@@ -1263,7 +1263,7 @@ tr:hover {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1283,7 +1283,7 @@ tr:hover {
   max-height: 90vh;
   object-fit: contain;
   border-radius: 4px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   transform: scale(0.9);
   transition: transform 0.3s ease;
 }
@@ -1299,7 +1299,7 @@ tr:hover {
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.4);
   font-family: 'Mabry Pro', sans-serif;
   font-size: 0.9rem;
 }
