@@ -264,11 +264,19 @@ div:has(> pre.slidev-code) {
   position: relative;
 }
 
-/* Line numbers toggle button */
-.line-numbers-toggle {
+/* Code block buttons container */
+.code-buttons {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+  z-index: 10;
+}
+
+/* Shared button styles for code block buttons */
+.code-copy-btn,
+.line-numbers-toggle {
   width: 1.5rem;
   height: 1.5rem;
   background: rgba(255, 255, 255, 0.1);
@@ -280,10 +288,34 @@ div:has(> pre.slidev-code) {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
   padding: 0;
 }
 
+/* Legacy positioning for line-numbers-toggle when not in container */
+.line-numbers-toggle:not(.code-buttons .line-numbers-toggle) {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 10;
+}
+
+/* Copy button icon */
+.code-copy-btn::before {
+  content: '\f0c5';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Copy button success state */
+.code-copy-btn.copied::before {
+  content: '\f00c';
+  font-weight: 900;
+  color: var(--esade-emerald, #4ECDC4);
+}
+
+/* Line numbers toggle icon */
 .line-numbers-toggle::before {
   content: '\f292';
   font-family: 'Font Awesome 6 Free';
@@ -292,19 +324,26 @@ div:has(> pre.slidev-code) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Show button on hover */
+/* Show buttons on hover */
+.slidev-code-wrapper:hover .code-copy-btn,
 .slidev-code-wrapper:hover .line-numbers-toggle,
+div:has(> pre.shiki):hover .code-copy-btn,
 div:has(> pre.shiki):hover .line-numbers-toggle,
+div:has(> pre.slidev-code):hover .code-copy-btn,
 div:has(> pre.slidev-code):hover .line-numbers-toggle,
-pre.shiki:hover + .line-numbers-toggle,
+pre.shiki:hover .code-copy-btn,
+pre.shiki:hover .line-numbers-toggle,
+pre:hover .code-copy-btn,
 pre:hover .line-numbers-toggle {
   opacity: 1;
 }
 
+.code-copy-btn:hover,
 .line-numbers-toggle:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.code-copy-btn:hover::before,
 .line-numbers-toggle:hover::before {
   color: rgba(255, 255, 255, 1);
 }

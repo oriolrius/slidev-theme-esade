@@ -44,23 +44,63 @@ export default defineAppSetup(({ app }) => {
     }
 
     // ================================
-    // LINE NUMBERS TOGGLE
+    // CODE BLOCK BUTTONS (Copy + Line Numbers)
     // ================================
-    const initLineNumbersToggle = () => {
-      // Find all code blocks that don't have a toggle button yet
+    const initCodeBlockButtons = () => {
+      // Find all code blocks that don't have buttons yet
       const codeBlocks = document.querySelectorAll('pre.shiki, pre.slidev-code')
 
       codeBlocks.forEach((pre) => {
-        // Skip if already has a toggle button
-        if (pre.querySelector('.line-numbers-toggle')) return
+        // Skip if already has buttons
+        if (pre.querySelector('.code-buttons')) return
 
-        // Create toggle button
+        // Create buttons container
+        const buttonsContainer = document.createElement('div')
+        buttonsContainer.className = 'code-buttons'
+
+        // Create copy button
+        const copyBtn = document.createElement('button')
+        copyBtn.className = 'code-copy-btn'
+        copyBtn.title = 'Copy code'
+        copyBtn.setAttribute('aria-label', 'Copy code to clipboard')
+
+        // Handle copy click
+        copyBtn.addEventListener('click', async (e) => {
+          e.preventDefault()
+          e.stopPropagation()
+
+          // Get code text (exclude line numbers if visible)
+          const codeElement = pre.querySelector('code')
+          let codeText = ''
+
+          if (codeElement) {
+            // Get text from each line, excluding the line number pseudo-element
+            const lines = codeElement.querySelectorAll('.line')
+            if (lines.length > 0) {
+              codeText = Array.from(lines).map(line => line.textContent || '').join('\n')
+            } else {
+              codeText = codeElement.textContent || ''
+            }
+          } else {
+            codeText = pre.textContent || ''
+          }
+
+          try {
+            await navigator.clipboard.writeText(codeText)
+            copyBtn.classList.add('copied')
+            setTimeout(() => copyBtn.classList.remove('copied'), 2000)
+          } catch (err) {
+            console.error('Failed to copy code:', err)
+          }
+        })
+
+        // Create line numbers toggle button
         const toggle = document.createElement('button')
         toggle.className = 'line-numbers-toggle'
         toggle.title = 'Toggle line numbers'
         toggle.setAttribute('aria-label', 'Toggle line numbers')
 
-        // Handle click
+        // Handle toggle click
         toggle.addEventListener('click', (e) => {
           e.preventDefault()
           e.stopPropagation()
@@ -75,27 +115,31 @@ export default defineAppSetup(({ app }) => {
           }
         })
 
-        // Insert button into pre element
+        // Add buttons to container (copy first, then line numbers)
+        buttonsContainer.appendChild(copyBtn)
+        buttonsContainer.appendChild(toggle)
+
+        // Insert container into pre element
         pre.style.position = 'relative'
-        pre.appendChild(toggle)
+        pre.appendChild(buttonsContainer)
       })
     }
 
     // Run on initial load and after navigation
     const observer = new MutationObserver(() => {
-      initLineNumbersToggle()
+      initCodeBlockButtons()
       initZoomableImages()
     })
 
     // Wait for DOM to be ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => {
-        initLineNumbersToggle()
+        initCodeBlockButtons()
         initZoomableImages()
         observer.observe(document.body, { childList: true, subtree: true })
       })
     } else {
-      initLineNumbersToggle()
+      initCodeBlockButtons()
       initZoomableImages()
       observer.observe(document.body, { childList: true, subtree: true })
     }
