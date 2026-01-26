@@ -1,12 +1,36 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   background?: 'white' | 'cream' | 'light-blue' | 'light-gray'
   // Full-screen image props
   image?: string
   imageFocus?: string  // e.g., 'center', 'top', '50% 30%'
   imageOverlay?: string  // e.g., '0.3' for dark overlay opacity
   imageSize?: string  // e.g., 'cover', 'contain', '120%', 'auto'
+  // Title color - ESADE colors or hex codes
+  titleColor?: string  // e.g., 'navy', 'kumera', 'electric-blue', 'coral', 'emerald', 'yellow', 'white', 'black' or '#FF0000'
 }>()
+
+// Map ESADE color names to CSS values
+const getColor = (color: string | undefined): string | undefined => {
+  if (!color) return undefined
+  const colorMap: Record<string, string> = {
+    'navy': 'var(--esade-navy, #002E5D)',
+    'kumera': 'var(--esade-kumera, #83691F)',
+    'gold': 'var(--esade-kumera, #83691F)',
+    'electric-blue': 'var(--esade-electric-blue, #00A7E1)',
+    'blue': 'var(--esade-electric-blue, #00A7E1)',
+    'coral': 'var(--esade-coral, #FF6B6B)',
+    'red': 'var(--esade-coral, #FF6B6B)',
+    'emerald': 'var(--esade-emerald, #4ECDC4)',
+    'green': 'var(--esade-emerald, #4ECDC4)',
+    'yellow': 'var(--esade-yellow, #FFE66D)',
+    'white': '#FFFFFF',
+    'black': '#000000',
+  }
+  return colorMap[color.toLowerCase()] || color  // Return as-is if hex code
+}
+
+const titleColorValue = getColor(props.titleColor)
 </script>
 
 <template>
@@ -25,7 +49,7 @@ defineProps<{
     </div>
 
     <!-- Title Area -->
-    <div class="title-area" :class="{ 'on-image': image }">
+    <div class="title-area" :class="{ 'on-image': image && !titleColor }" :style="titleColorValue ? { '--title-color': titleColorValue } : {}">
       <slot name="title" />
     </div>
 
@@ -121,7 +145,7 @@ defineProps<{
   font-family: 'ESADE', 'Mabry Pro', sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--esade-navy, #002E5D);
+  color: var(--title-color, var(--esade-navy, #002E5D));
   margin: 0;
   line-height: 1.2;
 }

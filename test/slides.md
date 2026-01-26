@@ -528,6 +528,30 @@ imageOverlay: "0.35"
 `imageSize: "150%"` zooms in 1.5× — `imageFocus: "30% 60%"` pans to left-center of the zoomed image
 
 ---
+layout: image
+image: /images/barcelona-cityscape-4k.jpg
+imageOverlay: "0.4"
+titleColor: kumera
+---
+
+::title::
+# Title with Custom Color
+
+::subtitle::
+`titleColor: kumera` — Also accepts: navy, electric-blue, coral, emerald, yellow, white, black, or hex codes like `#FF5500`
+
+---
+layout: image
+titleColor: "#E91E63"
+---
+
+::title::
+# Custom Hex Color Title
+
+::subtitle::
+`titleColor: "#E91E63"` — Use any RGB hex code with # prefix
+
+---
 layout: concepts
 cols: 3
 ---

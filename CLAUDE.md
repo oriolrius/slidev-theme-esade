@@ -128,6 +128,7 @@ Without this symlink, fonts return HTML error pages instead of WOFF2 files.
 | `compare` | `leftTitle`, `rightTitle`, `leftColor`, `rightColor` | Do's/Don'ts comparison |
 | `hero-cards` | `heroImage`, `heroHeight` | Hero banner + 3 cards |
 | `cards-grid` | `columns` (2 or 3) | Image cards grid |
+| `image` | `image`, `imageFocus`, `imageOverlay`, `imageSize`, `titleColor`, `background` | Full-screen image with title |
 | `infographic` | `background` | Full-width visual layout |
 | `concepts` | `cols`, `rows` | Grid of large icons + titles/descriptions |
 

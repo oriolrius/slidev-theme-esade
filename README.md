@@ -305,6 +305,39 @@ Browse featured notebooks to review concrete examples.
 Props:
 - `columns`: `2` (default) or `3`
 
+#### Image
+
+Full-screen image layout with customizable title colors. Perfect for hero slides, photo backgrounds, or visual content.
+
+```md
+---
+layout: image
+image: /path/to/image.jpg
+imageFocus: "50% 30%"
+imageOverlay: "0.4"
+titleColor: kumera
+---
+
+::title::
+# Slide Title
+
+::subtitle::
+Optional subtitle text
+
+::brand::
+<span>Brand text</span>
+```
+
+Props:
+- `image`: Path to background image
+- `imageFocus`: Crop position (e.g., `'center'`, `'top'`, `'50% 30%'`)
+- `imageOverlay`: Dark overlay opacity (0-1, e.g., `'0.4'`)
+- `imageSize`: Background size (e.g., `'cover'`, `'contain'`, `'150%'`)
+- `titleColor`: Title color - ESADE colors or hex codes:
+  - ESADE colors: `'navy'`, `'kumera'`/`'gold'`, `'electric-blue'`/`'blue'`, `'coral'`/`'red'`, `'emerald'`/`'green'`, `'yellow'`, `'white'`, `'black'`
+  - Hex codes: `'#FF5500'`, `'#E91E63'`, etc.
+- `background`: When no image - `'white'`, `'cream'`, `'light-blue'`, `'light-gray'`
+
 #### Infographic
 
 Full-width layout for diagrams and infographics.
