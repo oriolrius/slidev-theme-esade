@@ -1549,6 +1549,37 @@ layout: default
 </div>
 
 ---
+
+# Zoomable Images
+
+Add the `zoomable` class to any image to enable click-to-zoom functionality.
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+<div>
+
+**Markdown/HTML Usage:**
+
+```html
+<img src="./image.png" class="zoomable" />
+```
+
+**Features:**
+- Click image to zoom fullscreen
+- Click anywhere or press `Esc` to close
+- Smooth fade transition
+- Works on any layout
+
+</div>
+<div class="flex flex-col items-center justify-center">
+
+<img src="/images/man-working-computer.jpg" class="zoomable rounded-lg shadow-lg" style="max-height: 280px;" />
+
+<p class="text-sm text-gray-500 mt-2 text-center">Click the image to zoom!</p>
+
+</div>
+</div>
+
+---
 layout: center
 class: text-center
 ---
