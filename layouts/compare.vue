@@ -89,7 +89,7 @@ defineProps<{
 
 .intro-area :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: var(--esade-text-base, 1.5rem);
+  font-size: var(--esade-text-base, 1.6rem);
   color: #444;
   margin: 0;
 }
@@ -179,7 +179,7 @@ defineProps<{
 
 .column-title {
   font-family: 'ESADE', 'Mabry Pro', sans-serif;
-  font-size: var(--esade-text-lg, 1.6rem);
+  font-size: var(--esade-text-lg, 1.7rem);
   font-weight: 600;
   color: var(--esade-navy, #002E5D);
   margin: 0 0 1rem 0;
@@ -193,7 +193,7 @@ defineProps<{
 
 .column-content :deep(li) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: var(--esade-text-base, 1.5rem);
+  font-size: var(--esade-text-base, 1.6rem);
   color: #333;
   line-height: 1.5;
   margin-bottom: 0.6rem;
@@ -228,7 +228,7 @@ defineProps<{
 
 .takeaway-area :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: var(--esade-text-base, 1.5rem);
+  font-size: var(--esade-text-base, 1.6rem);
   color: #333;
   line-height: 1.5;
   margin: 0;

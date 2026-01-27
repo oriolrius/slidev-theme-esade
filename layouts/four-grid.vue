@@ -122,7 +122,7 @@ defineProps<{
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: var(--esade-text-base, 1.5rem);
+  font-size: var(--esade-text-base, 1.6rem);
 }
 
 .icon-rule {
@@ -173,7 +173,7 @@ defineProps<{
 
 .quadrant :deep(h3) {
   font-family: 'ESADE', 'Mabry Pro', sans-serif;
-  font-size: var(--esade-text-lg, 1.6rem);
+  font-size: var(--esade-text-lg, 1.7rem);
   font-weight: 600;
   color: var(--esade-navy, #002E5D);
   margin-bottom: 0.5rem;
@@ -181,7 +181,7 @@ defineProps<{
 
 .quadrant :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: var(--esade-text-base, 1.5rem);
+  font-size: var(--esade-text-base, 1.6rem);
   color: #444;
   line-height: 1.5;
   margin: 0;
@@ -211,7 +211,7 @@ defineProps<{
 
 .callout-area :deep(h4) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: var(--esade-text-lg, 1.6rem);
+  font-size: var(--esade-text-lg, 1.7rem);
   font-weight: 700;
   color: var(--esade-navy, #002E5D);
   margin: 0 0 0.25rem 0;
@@ -219,7 +219,7 @@ defineProps<{
 
 .callout-area :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: var(--esade-text-base, 1.5rem);
+  font-size: var(--esade-text-base, 1.6rem);
   color: #333;
   line-height: 1.5;
   margin: 0;

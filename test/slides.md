@@ -1232,37 +1232,37 @@ layout: default
 
 <div class="grid grid-cols-3 gap-4 grid-rows-2" style="height: 70vh; grid-template-rows: 1fr 1fr;">
 
-<div class="flex flex-col items-center justify-center" style="background: var(--esade-navy); color: white; border-radius: 8px; font-size: 1.3rem;">
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-navy); color: white; border-radius: 8px; font-size: 1.4rem;">
 <strong class="text-8xl">Navy</strong>
 <span class="my-2">#002E5D</span>
 <code style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-navy</code>
 </div>
 
-<div class="flex flex-col items-center justify-center" style="background: var(--esade-kumera); color: white; border-radius: 8px; font-size: 1.3rem;">
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-kumera); color: white; border-radius: 8px; font-size: 1.4rem;">
 <strong class="text-8xl">Kumera</strong>
 <span class="my-2">#83691F</span>
 <code style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-kumera</code>
 </div>
 
-<div class="flex flex-col items-center justify-center" style="background: var(--esade-electric-blue); color: white; border-radius: 8px; font-size: 1.3rem;">
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-electric-blue); color: white; border-radius: 8px; font-size: 1.4rem;">
 <strong class="text-7xl">Electric Blue</strong>
 <span class="my-2">#00A7E1</span>
 <code style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-electric-blue</code>
 </div>
 
-<div class="flex flex-col items-center justify-center" style="background: var(--esade-coral); color: white; border-radius: 8px; font-size: 1.3rem;">
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-coral); color: white; border-radius: 8px; font-size: 1.4rem;">
 <strong class="text-8xl">Coral</strong>
 <span class="my-2">#FF6B6B</span>
 <code style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-coral</code>
 </div>
 
-<div class="flex flex-col items-center justify-center" style="background: var(--esade-emerald); color: white; border-radius: 8px; font-size: 1.3rem;">
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-emerald); color: white; border-radius: 8px; font-size: 1.4rem;">
 <strong class="text-8xl">Emerald</strong>
 <span class="my-2">#4ECDC4</span>
 <code style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-emerald</code>
 </div>
 
-<div class="flex flex-col items-center justify-center" style="background: var(--esade-yellow); color: #333; border-radius: 8px; font-size: 1.3rem;">
+<div class="flex flex-col items-center justify-center" style="background: var(--esade-yellow); color: #333; border-radius: 8px; font-size: 1.4rem;">
 <strong class="text-8xl">Yellow</strong>
 <span class="my-2">#FFE66D</span>
 <code style="background: rgba(0,0,0,0.1); padding: 0.3rem 0.6rem; border-radius: 4px;">--esade-yellow</code>

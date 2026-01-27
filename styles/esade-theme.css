@@ -70,15 +70,15 @@
   --code-bg: #0a1628;
   --code-text: #e6edf3;
 
-  /* Typography Scale - Presentation-optimized sizes */
-  --esade-text-xs: 1rem;        /* 16px - fine print only */
-  --esade-text-sm: 1.2rem;      /* 19px - secondary/meta */
-  --esade-text-base: 1.5rem;    /* 24px - body text minimum */
-  --esade-text-lg: 1.6rem;      /* 26px - emphasized body */
-  --esade-text-xl: 1.8rem;      /* 29px - subtitles */
-  --esade-text-2xl: 2rem;       /* 32px - small titles */
-  --esade-text-3xl: 2.4rem;     /* 38px - section titles */
-  --esade-text-4xl: 2.8rem;     /* 45px - major titles */
+  /* Typography Scale - Presentation-optimized sizes (minimum 1.4rem) */
+  --esade-text-xs: 1.4rem;      /* 22px - smallest allowed */
+  --esade-text-sm: 1.5rem;      /* 24px - secondary/meta */
+  --esade-text-base: 1.6rem;    /* 26px - body text */
+  --esade-text-lg: 1.7rem;      /* 27px - emphasized body */
+  --esade-text-xl: 1.9rem;      /* 30px - subtitles */
+  --esade-text-2xl: 2.1rem;     /* 34px - small titles */
+  --esade-text-3xl: 2.5rem;     /* 40px - section titles */
+  --esade-text-4xl: 2.9rem;     /* 46px - major titles */
   --esade-icon-sm: 1.4rem;      /* icons in circles */
   --esade-icon-md: 1.8rem;      /* standalone icons */
   --esade-icon-lg: 2.25rem;     /* large icons */
@@ -181,13 +181,13 @@ pre code {
   padding: 0;
 }
 
-/* Code block text size modifiers */
-.text-sm pre code, .text-sm .shiki code { font-size: 1rem !important; }
-.text-base pre code, .text-base .shiki code { font-size: 1.2rem !important; }
-.text-lg pre code, .text-lg .shiki code { font-size: 1.4rem !important; }
-.text-xl pre code, .text-xl .shiki code { font-size: 1.6rem !important; }
-.text-2xl pre code, .text-2xl .shiki code { font-size: 1.8rem !important; }
-.text-3xl pre code, .text-3xl .shiki code { font-size: 2rem !important; }
+/* Code block text size modifiers (minimum 1.4rem) */
+.text-sm pre code, .text-sm .shiki code { font-size: 1.4rem !important; }
+.text-base pre code, .text-base .shiki code { font-size: 1.5rem !important; }
+.text-lg pre code, .text-lg .shiki code { font-size: 1.6rem !important; }
+.text-xl pre code, .text-xl .shiki code { font-size: 1.8rem !important; }
+.text-2xl pre code, .text-2xl .shiki code { font-size: 2rem !important; }
+.text-3xl pre code, .text-3xl .shiki code { font-size: 2.2rem !important; }
 
 /* Slidev/Shiki code block overrides */
 .slidev-code,
@@ -304,7 +304,7 @@ div:has(> pre.slidev-code) {
   content: '\f0c5';
   font-family: 'Font Awesome 6 Free';
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -320,7 +320,7 @@ div:has(> pre.slidev-code) {
   content: '\f292';
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
-  font-size: 0.75rem;
+  font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -466,7 +466,7 @@ td code {
   background-color: var(--esade-navy) !important;
   color: #fff !important;
   padding: 0.2rem 0.5rem !important;
-  font-size: 1.2rem !important;
+  font-size: 1.4rem !important;
 }
 
 tr:hover {
@@ -529,7 +529,7 @@ tr:hover {
 .slidev-layout.cover p {
   font-family: 'Mabry Pro', sans-serif;
   color: rgba(255, 255, 255, 0.8) !important;
-  font-size: 1.3rem !important;
+  font-size: 1.4rem !important;
   margin-top: 1.5rem;
   max-width: 650px;
   line-height: 1.6;
@@ -849,22 +849,22 @@ tr:hover {
   animation: esade-fade-in 0.5s ease-out;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments (minimum 1.4rem) */
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 
   p, li {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
 
   .slidev-layout.two-cols {
@@ -903,6 +903,7 @@ tr:hover {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
+  font-size: var(--esade-text-xs, 1.4rem);
 }
 
 .callout-warning::before {
@@ -942,6 +943,7 @@ tr:hover {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  font-size: var(--esade-text-xs, 1.4rem);
 }
 
 .callout-info::before {
@@ -977,6 +979,7 @@ tr:hover {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
+  font-size: var(--esade-text-xs, 1.4rem);
 }
 
 .callout-tip::before {
@@ -1025,6 +1028,7 @@ tr:hover {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  font-size: var(--esade-text-xs, 1.4rem);
 }
 
 .callout-note::before {
@@ -1054,6 +1058,7 @@ tr:hover {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  font-size: var(--esade-text-xs, 1.4rem);
 }
 
 .callout-secure::before {
@@ -1128,7 +1133,7 @@ tr:hover {
   background: var(--esade-navy);
   color: white;
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -1139,13 +1144,13 @@ tr:hover {
 .step-number.small {
   width: 32px;
   height: 32px;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
 }
 
 .step-number.large {
   width: 64px;
   height: 64px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .step-number.gold {
@@ -1164,6 +1169,7 @@ tr:hover {
   background: var(--esade-light-gray, #F5F5F5);
   border-radius: 8px;
   padding: 1.5rem;
+  font-size: var(--esade-text-xs, 1.4rem);
 }
 
 .feature-card h3 {
@@ -1301,5 +1307,5 @@ tr:hover {
   transform: translateX(-50%);
   color: rgba(0, 0, 0, 0.4);
   font-family: 'Mabry Pro', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
 }

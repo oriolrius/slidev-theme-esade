@@ -260,7 +260,7 @@ const getDescSize = () => {
 
 .footer-area :deep(p) {
   font-family: 'Mabry Pro', sans-serif;
-  font-size: var(--esade-text-base, 1.5rem);
+  font-size: var(--esade-text-base, 1.6rem);
   color: #666;
   margin: 0;
   text-align: center;
