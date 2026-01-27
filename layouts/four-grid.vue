@@ -122,6 +122,7 @@ defineProps<{
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-size: var(--esade-text-base, 1.5rem);
 }
 
 .icon-rule {
