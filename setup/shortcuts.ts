@@ -4,12 +4,13 @@ import { useNav } from '@slidev/client'
 
 export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]) => {
   // Filter out default PageUp/PageDown shortcuts so we can override them
+  // Keep all other shortcuts including non-string keys (like Ref<boolean>)
   const filteredBase = base.filter(s =>
-    typeof s.key === 'string' && !['PageUp', 'PageDown'].includes(s.key)
+    typeof s.key !== 'string' || !['PageUp', 'PageDown'].includes(s.key)
   )
 
   // Get navigation state for computing slide positions
-  const { currentSlideNo, total } = useNav()
+  const { currentSlideNo, total, openInEditor } = useNav()
 
   return [
     ...filteredBase,
@@ -42,6 +43,14 @@ export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]
         nav.go(target)
       },
       autoRepeat: true,
+    },
+    // 'e' key - open current slide in external editor (VS Code)
+    {
+      key: 'e',
+      fn: () => {
+        openInEditor()
+      },
+      autoRepeat: false,
     },
   ]
 })
