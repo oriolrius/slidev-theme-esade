@@ -1269,7 +1269,7 @@ tr:hover {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.99);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1298,14 +1298,3 @@ tr:hover {
   transform: scale(1);
 }
 
-/* Close hint */
-.zoom-overlay::after {
-  content: 'Click anywhere or press Esc to close';
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(0, 0, 0, 0.4);
-  font-family: 'Mabry Pro', sans-serif;
-  font-size: 1.4rem;
-}
