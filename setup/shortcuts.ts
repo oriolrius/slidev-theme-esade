@@ -26,18 +26,30 @@ export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]
       fn: () => nav.goLast(),
       autoRepeat: false,
     },
-    // Page Up - jump 10 slides backward
+    // Page Up - go to previous slide (for presentation clickers)
     {
       key: 'PageUp',
+      fn: () => nav.prev(),
+      autoRepeat: true,
+    },
+    // Page Down - go to next slide (for presentation clickers)
+    {
+      key: 'PageDown',
+      fn: () => nav.next(),
+      autoRepeat: true,
+    },
+    // Shift+Page Up - jump 10 slides backward
+    {
+      key: 'Shift+PageUp',
       fn: () => {
         const target = Math.max(1, currentSlideNo.value - 10)
         nav.go(target)
       },
       autoRepeat: true,
     },
-    // Page Down - jump 10 slides forward
+    // Shift+Page Down - jump 10 slides forward
     {
-      key: 'PageDown',
+      key: 'Shift+PageDown',
       fn: () => {
         const target = Math.min(total.value, currentSlideNo.value + 10)
         nav.go(target)
