@@ -199,11 +199,18 @@ pre.slidev-code,
   background-color: var(--code-bg) !important;
 }
 
-/* Shiki text color - applies as fallback when no inline style exists (plain text blocks) */
-/* Syntax-highlighted code has inline styles that override this */
+/* Shiki text color - fallback for spans without inline styles */
 .shiki span,
 .slidev-code span {
   color: var(--code-text);
+}
+
+/* Force yellow for plain text code blocks */
+/* Shiki puts language class on <code> element, not <pre> */
+code.language-text span,
+code.language-plaintext span,
+code.language-txt span {
+  color: var(--code-text) !important;
 }
 
 /* Fix code block line alignment - use flex to avoid first-line offset */
