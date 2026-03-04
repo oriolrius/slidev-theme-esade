@@ -1055,6 +1055,54 @@ const left = "side"
 </div>
 
 ---
+layout: default
+---
+
+# Code Block Colors
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+## Syntax Highlighted (Python)
+
+```python
+def hello_world():
+    name = "ESADE"
+    print(f"Hello, {name}!")
+    return True
+```
+
+## Syntax Highlighted (JavaScript)
+
+```javascript
+const greeting = "Hello";
+function test() {
+  return greeting + " World";
+}
+```
+
+</div>
+<div>
+
+## Plain Text (Yellow for projectors)
+
+```text
+Model Package Group: "sg-finetune"
+├── Version 1 (Approved)
+│   ├── Model: s3://bucket/model.tar.gz
+│   └── Metrics: eval_loss=0.45
+└── Version 2 (Pending)
+    └── Metrics: eval_loss=0.38
+```
+
+<div class="callout-info mt-4">
+<p>Code blocks with <code>```text</code> or no language use <strong>yellow</strong> (#FFE66D) for better projector visibility.</p>
+</div>
+
+</div>
+</div>
+
+---
 layout: section
 ---
 
