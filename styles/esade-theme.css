@@ -199,10 +199,21 @@ pre.slidev-code,
   background-color: var(--code-bg) !important;
 }
 
-/* Shiki dark theme text */
+/* Shiki dark theme text - fallback color (no !important to allow syntax highlighting) */
 .shiki span,
 .slidev-code span {
   color: var(--code-text);
+}
+
+/* Force yellow for plain text / unrecognized language code blocks */
+pre.shiki:not([class*="language-"]) span,
+pre.shiki.language-text span,
+pre.shiki.language-plaintext span,
+pre.shiki.language- span,
+.shiki[data-language=""] span,
+.shiki[data-language="text"] span,
+.shiki[data-language="plaintext"] span {
+  color: var(--code-text) !important;
 }
 
 /* Fix code block line alignment - use flex to avoid first-line offset */
