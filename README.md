@@ -508,6 +508,34 @@ Icon/text sizes automatically adjust based on grid dimensions.
 </div>
 ```
 
+### Interactive Polls
+
+The theme ships full ESADE styling for the [slidev-component-poll](https://www.npmjs.com/package/slidev-component-poll) addon: poll cards follow the `esade-box` family (white surface, kumera left border), buttons use the kumera / electric-blue pattern, result bars use navy and kumera tints, and correct quiz answers are highlighted in emerald.
+
+Enable it in your presentation:
+
+```bash
+npm install -D slidev-component-poll
+```
+
+```yaml
+---
+theme: slidev-theme-esade
+addons:
+  - slidev-component-poll
+pollSettings:
+  anonymous: true   # skip the name-login gate; omit to ask each voter for a name
+---
+```
+
+Minimal usage:
+
+```html
+<Poll question="Which cloud provider does your organization primarily use?" :answers="['AWS', 'Azure', 'Google Cloud', 'Other']" displayResults="poll" />
+```
+
+No extra configuration is needed -- the styling applies automatically wherever `<Poll />` (or `<PollControl />`) appears, on light and dark layouts alike. See the addon documentation for quizzes (`:correctAnswer`), multiple choice (`:multiple="true"`), and controlled polls.
+
 ---
 
 ## Brand Colors

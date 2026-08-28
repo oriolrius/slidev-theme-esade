@@ -1,0 +1,6 @@
+allowBuilds:
+  playwright-chromium: true
+  vue-demi: true
+onlyBuiltDependencies:
+  - playwright-chromium
+  - vue-demi

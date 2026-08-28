@@ -13,6 +13,10 @@ info: |
   "Do Good. Do Better."
 transition: slide-left
 mdc: true
+addons:
+  - slidev-component-poll
+pollSettings:
+  anonymous: true
 drawings:
   persist: false
 css: unocss
@@ -1626,6 +1630,70 @@ Add the `zoomable` class to any image to enable click-to-zoom functionality.
 
 </div>
 </div>
+
+---
+layout: section
+---
+
+# Interactive Polls
+
+Live classroom voting with full ESADE styling
+
+<div class="mt-8" style="font-size: 1.4rem; opacity: 0.85;">
+<i class="fas fa-puzzle-piece mr-2"></i> Requires the <code>slidev-component-poll</code> addon: install it and add <code>addons: [slidev-component-poll]</code> to the deck frontmatter
+</div>
+
+---
+layout: default
+---
+
+# Simple Poll
+
+Take the pulse of the class -- votes render as ESADE-styled result bars.
+
+```html
+<Poll question="..." :answers="['AWS', ...]" displayResults="poll" />
+```
+
+<Poll question="Which cloud provider does your organization primarily use?" :answers="['AWS', 'Microsoft Azure', 'Google Cloud', 'On-premise / other']" displayResults="poll" />
+
+---
+layout: default
+---
+
+# Quiz
+
+Set `correctAnswer` (index starts at 0) -- the default quiz display highlights the right answer in emerald once the poll is closed.
+
+```html
+<Poll question="..." :answers="['200', '301', '404', '500']" :correctAnswer="2" />
+```
+
+<Poll question="Which HTTP status code means 'Not Found'?" :answers="['200 OK', '301 Moved Permanently', '404 Not Found', '500 Internal Server Error']" :correctAnswer="2" />
+
+---
+layout: default
+---
+
+# Multiple-Choice Poll
+
+Add `:multiple="true"` for checkboxes -- students can pick several answers.
+
+```html
+<Poll question="..." :answers="[...]" :multiple="true" displayResults="poll" />
+```
+
+<Poll question="Which topics should we review before the final exam?" :answers="['Docker & containers', 'CI/CD pipelines', 'Infrastructure as Code', 'Monitoring & observability']" :multiple="true" displayResults="poll" />
+
+---
+layout: section
+---
+
+# Poll on a Dark Layout
+
+<div class="mb-6" style="font-size: 1.4rem; opacity: 0.85;">On <code>section</code> and <code>cover</code> layouts the poll becomes a centered white card so every answer stays legible on navy</div>
+
+<Poll question="Should we schedule an extra lab session this week?" :answers="['Yes, please', 'No, the schedule is fine', 'Only if it is recorded']" displayResults="poll" />
 
 ---
 layout: center

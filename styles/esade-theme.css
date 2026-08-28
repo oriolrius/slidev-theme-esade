@@ -1306,3 +1306,493 @@ tr:hover {
   transform: scale(1);
 }
 
+/* ============================================
+   INTERACTIVE POLLS (slidev-component-poll)
+   Professional ESADE styling (esade-box family)
+   Selectors rooted at .slidev-layout .poll (>= 0-3-0)
+   beat the addon's Vue-scoped styles (0-2-0) and
+   UnoCSS utilities; !important only against the
+   addon's !-prefixed utilities and the theme's own
+   !important rules.
+   ============================================ */
+
+/* Poll card - white surface with kumera left border (esade-box.highlight family) */
+.slidev-layout .poll {
+  background-color: var(--esade-white) !important;
+  border: 1px solid color-mix(in srgb, var(--esade-navy) 15%, var(--esade-white)) !important;
+  border-left: 5px solid var(--esade-kumera) !important;
+  border-radius: 8px !important;
+  padding: 1.5rem 1.75rem !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: var(--esade-text-base);
+  color: var(--esade-black);
+  text-align: left; /* stays left-aligned on center layout */
+}
+
+/* Poll body text - Mabry Pro, never below 1.4rem (overrides theme's 1.8rem p/li) */
+.slidev-layout .poll p,
+.slidev-layout .poll li,
+.slidev-layout .poll label,
+.slidev-layout .poll .poll-question__item-text {
+  font-family: 'Mabry Pro', sans-serif !important;
+  font-size: var(--esade-text-base) !important;
+  line-height: 1.4 !important;
+  color: var(--esade-black);
+}
+
+/* Kill theme list chrome (disc markers, kumera ::marker, indents) inside polls */
+.slidev-layout .poll ul,
+.slidev-layout .poll ol {
+  list-style: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.slidev-layout .poll li::marker {
+  content: none;
+}
+
+/* ============================================
+   POLL HEADER: QUESTION TITLE + TOGGLE BUTTONS
+   ============================================ */
+
+.slidev-layout .poll .poll__header {
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Question - serif ESADE heading voice, navy */
+.slidev-layout .poll .poll-title {
+  font-family: 'ESADE', 'Mabry Pro', sans-serif;
+  font-size: var(--esade-text-xl) !important;
+  font-weight: 700;
+  color: var(--esade-navy);
+  line-height: 1.3;
+}
+
+/* Show poll / Show results toggles - theme link pattern (kumera underline) */
+.slidev-layout .poll .poll__button {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: var(--esade-text-xs) !important;
+  color: var(--esade-navy);
+  text-decoration: none !important;
+  border-bottom: 2px solid var(--esade-kumera);
+  padding-bottom: 0.1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  background: transparent !important;
+  transition: all 0.3s ease;
+}
+
+.slidev-layout .poll .poll__button:hover {
+  color: var(--esade-kumera);
+  border-bottom-color: var(--esade-electric-blue);
+}
+
+/* ============================================
+   POLL QUESTION: ANSWER LIST + INPUTS
+   ============================================ */
+
+/* Answer rows - restore flex (theme forces li { display: list-item !important }) */
+.slidev-layout .poll .poll-question__item {
+  display: flex !important;
+  align-items: center;
+  padding: 0.5rem 0.75rem !important;
+  border: 1px solid transparent !important;
+  border-radius: 6px !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.slidev-layout .poll .poll-question__item-label {
+  cursor: pointer;
+  align-items: center;
+}
+
+/* Hover affordance - faint kumera wash */
+.slidev-layout .poll .poll-question__item:hover {
+  background-color: color-mix(in srgb, var(--esade-kumera) 8%, var(--esade-white));
+}
+
+/* Selected answer - kumera tint + hairline border, like esade-box.highlight */
+.slidev-layout .poll .poll-question__item:has(.poll-question__item-input:checked) {
+  background-color: color-mix(in srgb, var(--esade-kumera) 14%, var(--esade-white));
+  border-color: var(--esade-kumera) !important;
+}
+
+/* Radios / checkboxes - navy accent, fixed rem size for projector visibility */
+.slidev-layout .poll input[type="radio"],
+.slidev-layout .poll input[type="checkbox"] {
+  accent-color: var(--esade-navy);
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.slidev-layout .poll input[type="radio"][disabled],
+.slidev-layout .poll input[type="checkbox"][disabled] {
+  cursor: default;
+}
+
+/* ============================================
+   POLL BUTTONS (submit + name-login submit)
+   ============================================ */
+
+/* Vote / login submit - esade-button pattern (kumera, hover navy) */
+.slidev-layout .poll input[type="submit"],
+.slidev-layout .poll .poll-question__input,
+.slidev-layout .poll input.primary {
+  background-color: var(--esade-kumera) !important;
+  color: var(--esade-white) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 0.5rem 1.6rem !important;
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: var(--esade-text-sm) !important;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover to navy: white label stays 13.5:1 (electric blue was only 2.76:1),
+   matching the .poll-control__button:hover voice */
+.slidev-layout .poll input[type="submit"]:hover,
+.slidev-layout .poll .poll-question__input:hover,
+.slidev-layout .poll input.primary:hover {
+  background-color: var(--esade-navy) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slidev-layout .poll input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   POLL STATUS NOTICES (voted / closed / not open)
+   ============================================ */
+
+.slidev-layout .poll .poll-question__voted,
+.slidev-layout .poll .poll-question__closed,
+.slidev-layout .poll .poll-question__clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  border-left: 4px solid;
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: var(--esade-text-sm) !important;
+  font-weight: 500;
+  color: var(--esade-navy);
+  margin-top: 0.5rem;
+}
+
+.slidev-layout .poll .poll-question__voted::before,
+.slidev-layout .poll .poll-question__closed::before,
+.slidev-layout .poll .poll-question__clear::before {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: var(--esade-icon-sm);
+}
+
+/* Voted! - emerald success */
+.slidev-layout .poll .poll-question__voted {
+  background-color: color-mix(in srgb, var(--esade-emerald) 12%, var(--esade-white));
+  border-left-color: var(--esade-emerald);
+}
+
+.slidev-layout .poll .poll-question__voted::before {
+  content: '\f058'; /* circle-check */
+  /* navy-deepened emerald: raw emerald is under 3:1 on the tint */
+  color: color-mix(in srgb, var(--esade-emerald) 55%, var(--esade-navy));
+}
+
+/* The poll is closed - coral */
+.slidev-layout .poll .poll-question__closed {
+  background-color: color-mix(in srgb, var(--esade-coral) 10%, var(--esade-white));
+  border-left-color: var(--esade-coral);
+}
+
+.slidev-layout .poll .poll-question__closed::before {
+  content: '\f023'; /* lock */
+  /* navy-deepened coral for >=3:1 icon contrast on the tint */
+  color: color-mix(in srgb, var(--esade-coral) 55%, var(--esade-navy));
+}
+
+/* The poll is not open - neutral waiting state */
+.slidev-layout .poll .poll-question__clear {
+  background-color: var(--esade-light-gray);
+  border-left-color: var(--esade-medium-gray);
+}
+
+.slidev-layout .poll .poll-question__clear::before {
+  content: '\f017'; /* clock */
+  /* navy-deepened gray for >=3:1 icon contrast on light gray */
+  color: color-mix(in srgb, var(--esade-medium-gray) 55%, var(--esade-navy));
+}
+
+/* "Your answer has been submitted." / "Waiting for the poll to be closed..."
+   (PollResults fallback paragraphs, direct children of the provider wrapper) */
+.slidev-layout .poll > div > p {
+  color: var(--esade-navy);
+  margin-bottom: 0.4rem;
+}
+
+/* ============================================
+   POLL RESULTS: BARS (displayResults="poll")
+   ============================================ */
+
+/* Result rows - restore flex over theme's list-item !important */
+.slidev-layout .poll .poll-result {
+  display: flex !important;
+  align-items: center;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 6px !important;
+}
+
+/* Full-width track behind each bar */
+.slidev-layout .poll .poll-result::before {
+  background-color: var(--esade-light-gray) !important;
+}
+
+/* Fill - restrained navy tint, keeps dark text legible at any width */
+.slidev-layout .poll .poll-result__bar {
+  background-color: color-mix(in srgb, var(--esade-navy) 28%, var(--esade-white)) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Downplayed (non-leading / wrong) rows - muted gray fill */
+.slidev-layout .poll .poll-result.opacity-50 .poll-result__bar {
+  background-color: color-mix(in srgb, var(--esade-medium-gray) 50%, var(--esade-white)) !important;
+}
+
+/* Neutralize the addon's whole-row opacity dim (it pushed the 1.4rem vote
+   count below 4.5:1); de-emphasis comes from the gray bar fill plus
+   explicitly muted-but-accessible text colors instead */
+.slidev-layout .poll li.opacity-50 {
+  opacity: 1;
+}
+
+.slidev-layout .poll .poll-result.opacity-50 .poll-result__answer {
+  color: color-mix(in srgb, var(--esade-navy) 80%, var(--esade-white));
+}
+
+.slidev-layout .poll .poll-result.opacity-50 .poll-result__count {
+  color: var(--esade-navy);
+}
+
+/* Leading answer - navy emphasis */
+.slidev-layout .poll .poll-result:not(.opacity-50) .poll-result__answer {
+  font-weight: 500;
+  color: var(--esade-navy);
+}
+
+/* When the reveal actually downplays losers, the winner gets the kumera accent
+   (live open controlled polls have no downplayed rows, so all bars stay navy) */
+.slidev-layout .poll .poll-results:has(.opacity-50) .poll-result:not(.opacity-50) .poll-result__bar {
+  background-color: color-mix(in srgb, var(--esade-kumera) 30%, var(--esade-white)) !important;
+}
+
+.slidev-layout .poll .poll-results:has(.opacity-50) .poll-result:not(.opacity-50) .poll-result__percentage {
+  color: var(--esade-kumera);
+}
+
+/* Percentage + (count) */
+.slidev-layout .poll .poll-result__values {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding-left: 1rem;
+  white-space: nowrap;
+}
+
+.slidev-layout .poll .poll-result__percentage {
+  font-size: var(--esade-text-sm);
+  font-weight: 700;
+  color: var(--esade-navy);
+}
+
+.slidev-layout .poll .poll-result__count {
+  font-size: var(--esade-text-xs);
+  color: color-mix(in srgb, var(--esade-navy) 80%, var(--esade-white));
+}
+
+/* ============================================
+   QUIZ RESULTS (displayResults="quiz")
+   ============================================ */
+
+.slidev-layout .poll .poll-results-quiz > li {
+  display: block !important;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 6px !important;
+}
+
+/* Correct answer - rebrand addon's !border-green-500 utility: navy-deepened
+   emerald border (~4.3:1 on white, raw emerald was 1.93:1) plus redundant
+   non-color cues (bold row + circle-check icon) per WCAG 1.4.1 */
+.slidev-layout .poll .poll-results-quiz > li.\!border-green-500 {
+  position: relative;
+  border: 2px solid color-mix(in srgb, var(--esade-emerald) 55%, var(--esade-navy)) !important;
+  background-color: color-mix(in srgb, var(--esade-emerald) 12%, var(--esade-white));
+  font-weight: 700;
+  padding-right: 2.8rem !important;
+}
+
+.slidev-layout .poll .poll-results-quiz > li.\!border-green-500::after {
+  content: '\f058'; /* circle-check */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: var(--esade-icon-sm);
+  color: color-mix(in srgb, var(--esade-emerald) 55%, var(--esade-navy));
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Quiz wrong answers keep full opacity too - muted navy text (7.4:1) does
+   the de-emphasis instead of the addon's opacity dim */
+.slidev-layout .poll .poll-results-quiz > li.opacity-50 {
+  color: color-mix(in srgb, var(--esade-navy) 80%, var(--esade-white));
+}
+
+/* Disabled review inputs - keep navy accent, fully visible */
+.slidev-layout .poll .poll-results-quiz input[disabled] {
+  accent-color: var(--esade-navy);
+  opacity: 1;
+}
+
+/* ============================================
+   POLL CONTROLS (Open / Close / Clear)
+   ============================================ */
+
+.slidev-layout .poll-control {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Presenter buttons - outlined navy (secondary action voice) */
+.slidev-layout .poll-control .poll-control__button {
+  background-color: var(--esade-white) !important;
+  color: var(--esade-navy) !important;
+  border: 2px solid var(--esade-navy) !important;
+  border-radius: 4px !important;
+  padding: 0.4rem 1.2rem !important;
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: var(--esade-text-xs) !important;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slidev-layout .poll-control .poll-control__button:hover {
+  background-color: var(--esade-navy) !important;
+  color: var(--esade-white) !important;
+}
+
+/* ============================================
+   NAME-LOGIN FORM (PollUser)
+   ============================================ */
+
+/* "Enter your name:" label */
+.slidev-layout .poll form > label {
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: var(--esade-text-base) !important;
+  font-weight: 500;
+  color: var(--esade-navy);
+}
+
+/* Text input - navy hairline, kumera focus ring */
+.slidev-layout .poll form input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
+  background-color: var(--esade-white);
+  border: 2px solid color-mix(in srgb, var(--esade-navy) 60%, var(--esade-white)) !important;
+  border-radius: 6px !important;
+  padding: 0.4rem 0.8rem;
+  font-family: 'Mabry Pro', sans-serif;
+  font-size: var(--esade-text-sm) !important;
+  color: var(--esade-black);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slidev-layout .poll form input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
+  outline: none;
+  border-color: var(--esade-kumera) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--esade-kumera) 20%, transparent);
+}
+
+/* "This name is already used" - navy text on coral-tinted chip, like the
+   closed notice (raw coral text on white was 2.78:1) */
+.slidev-layout .poll form span.text-red-400 {
+  display: inline-block;
+  color: var(--esade-navy) !important;
+  background-color: color-mix(in srgb, var(--esade-coral) 10%, var(--esade-white));
+  border-left: 4px solid var(--esade-coral);
+  border-radius: 4px;
+  padding: 0.2rem 0.8rem;
+  font-size: var(--esade-text-xs) !important;
+  font-weight: 500;
+}
+
+/* ============================================
+   KEYBOARD FOCUS (projector-visible ring)
+   ============================================ */
+
+/* Two-tone ring: navy outline carries the indicator on the white card
+   (13.5:1; electric blue alone was 2.76:1 there), and the wider electric-blue
+   glow band stays >=3:1 on navy cover/section backgrounds */
+.slidev-layout .poll button:focus-visible,
+.slidev-layout .poll input:focus-visible,
+.slidev-layout .poll-control button:focus-visible {
+  outline: 3px solid var(--esade-navy);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--esade-electric-blue) 70%, transparent);
+}
+
+/* ============================================
+   POLLS ON DARK LAYOUTS (cover / section)
+   ============================================ */
+
+/* White card stays a legible island on navy: centered, capped width,
+   reset inherited white text + centered alignment */
+.slidev-layout.cover .poll,
+.slidev-layout.section .poll {
+  background-color: var(--esade-white) !important;
+  width: 100%;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  color: var(--esade-black);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+.slidev-layout.cover .poll p,
+.slidev-layout.cover .poll li,
+.slidev-layout.section .poll p,
+.slidev-layout.section .poll li {
+  color: var(--esade-black) !important;
+  max-width: none;
+  margin-top: 0;
+}
+
+/* Standalone controls on navy - keep buttons centered */
+.slidev-layout.cover .poll-control,
+.slidev-layout.section .poll-control {
+  justify-content: center;
+}
+
+/* Keep card, bar and tint colors in PDF exports */
+@media print {
+  .slidev-layout .poll,
+  .slidev-layout .poll * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+

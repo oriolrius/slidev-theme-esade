@@ -2,7 +2,7 @@
   "name": "slidev-theme-esade-test",
   "private": true,
   "scripts": {
-    "dev": "slidev slides.md --open",
+    "dev": "slidev slides.md --remote",
     "build": "slidev build slides.md",
     "export": "slidev export slides.md --output slides.pdf"
   },
@@ -10,6 +10,9 @@
     "@slidev/cli": "^52.0.0"
   },
   "devDependencies": {
-    "playwright-chromium": "^1.40.0"
-  }
+    "playwright-chromium": "^1.40.0",
+    "slidev-component-poll": "^3.0.0",
+    "vite-plugin-zephyr": "^0.1.16"
+  },
+  "version": "1.0.0"
 }
