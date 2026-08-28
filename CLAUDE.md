@@ -37,9 +37,9 @@ slidev-theme-esade/
 │   ├── cover-split.vue      # 50/50 image + content split
 │   ├── four-grid.vue        # 2×2 quadrant with icons
 │   ├── compare.vue          # Do's/Don'ts side-by-side
-│   ├── hero-cards.vue       # Hero banner + 3 cards
-│   ├── cards-grid.vue       # Image cards grid (2 or 3 cols)
-│   └── infographic.vue      # Full-width visual/diagram
+│   ├── cards.vue            # Card grid (optional hero + up to 6 cards)
+│   ├── concepts.vue         # Grid of large icons + titles/descriptions
+│   └── image.vue            # Full-screen image with title
 ├── styles/
 │   └── esade-theme.css      # All CSS: fonts, colors, components
 ├── public/
@@ -90,12 +90,24 @@ The `test/` folder is a **self-contained Slidev project** designed specifically 
 ### Quick Start (Hot-Reload Development)
 
 ```bash
+# One-time: install the theme's own dev deps at the repo root.
+# Required since Slidev 52 (Rolldown-Vite): the setup/*.ts and global-bottom.vue
+# files import `@slidev/types` / `@slidev/client`, and with `theme: ../` they are
+# resolved from the theme ROOT, not from test/node_modules. Without this the build
+# fails with: Rolldown failed to resolve import "@slidev/types".
+npm install            # at the repo root
+
 cd test/
 pnpm install
 pnpm dev --port 3031
 ```
 
 Changes to `../styles/esade-theme.css` or `../layouts/*.vue` will hot-reload instantly.
+
+> **Note on packaging:** `@slidev/types` and `@slidev/client` are declared as *optional*
+> `peerDependencies` (Slidev provides them at runtime) plus `devDependencies` for the dev
+> harness. End-user installs (`npm install github:oriolrius/slidev-theme-esade`) don't need
+> the root install — the theme resolves them from the consumer project's `node_modules`.
 
 ### Critical: Font Symlink
 
@@ -123,14 +135,12 @@ Without this symlink, fonts return HTML error pages instead of WOFF2 files.
 ### Vue Component Layouts
 | Layout | Props | Description |
 |--------|-------|-------------|
-| `cover-split` | `image`, `imagePosition` | 50/50 split with image |
-| `four-grid` | - | 2×2 quadrant with icon separators |
-| `compare` | `leftTitle`, `rightTitle`, `leftColor`, `rightColor` | Do's/Don'ts comparison |
-| `hero-cards` | `heroImage`, `heroHeight` | Hero banner + 3 cards |
-| `cards-grid` | `columns` (2 or 3) | Image cards grid |
-| `image` | `image`, `imageFocus`, `imageOverlay`, `imageSize`, `titleColor`, `background` | Full-screen image with title |
-| `infographic` | `background` | Full-width visual layout |
+| `cover-split` | `image`, `imagePosition`, `imageWidth`, `imageFocus` | 50/50 split with image |
+| `four-grid` | `icons` (tuple) + slots `title`/`icon1-4`/`q1-4`/`callout` | 2×2 quadrant with icon separators |
+| `compare` | `leftTitle`, `rightTitle`, `leftColor` (`red`\|`orange`), `rightColor` (`green`\|`blue`) | Do's/Don'ts comparison |
+| `cards` | `heroImage`, `heroHeight`, `rows`, `cardBg`, `cardBorder`, `card1Bg`…`card6Bg`, `card1Border`…`card6Border` | Card grid (optional hero + up to 6 cards) |
 | `concepts` | `cols`, `rows` | Grid of large icons + titles/descriptions |
+| `image` | `image`, `imageFocus`, `imageOverlay`, `imageSize`, `titleColor`, `background` (`white`\|`cream`\|`light-blue`\|`light-gray`) | Full-screen image with title |
 
 ## CSS Components
 

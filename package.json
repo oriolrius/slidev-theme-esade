@@ -1,6 +1,6 @@
 {
   "name": "slidev-theme-esade",
-  "version": "2.6.6",
+  "version": "2.6.7",
   "description": "ESADE branded theme for Slidev presentations",
   "keywords": [
     "slidev-theme",
@@ -30,8 +30,22 @@
     "setup",
     "global-bottom.vue"
   ],
+  "peerDependencies": {
+    "@slidev/types": ">=52.0.0",
+    "@slidev/client": ">=52.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@slidev/types": {
+      "optional": true
+    },
+    "@slidev/client": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@slidev/cli": "^52.11.3",
+    "@slidev/client": "^52.19.1",
+    "@slidev/types": "^52.19.1",
     "playwright-chromium": "^1.58.0"
   }
 }
