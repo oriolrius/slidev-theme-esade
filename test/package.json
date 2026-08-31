@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "slidev slides.md --remote",
     "build": "slidev build slides.md",
-    "export": "slidev export slides.md --output slides.pdf"
+    "export": "slidev export slides.md --output slides.pdf",
+    "stack": "mprocs"
   },
   "dependencies": {
     "@slidev/cli": "^52.0.0"

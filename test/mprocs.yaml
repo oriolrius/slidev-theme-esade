@@ -1,0 +1,22 @@
+# mprocs dev stack for the ESADE Slidev theme.
+# Run with `mprocs` (or `pnpm stack`) from this folder.
+#   - slidev autostarts; the others are on-demand (select + press `s` to start)
+#   - `--bind 0.0.0.0` is required so the Windows/Orca browser can reach the
+#     server through WSL2 (an IPv6-only bind is invisible from Windows).
+procs:
+  slidev:
+    shell: "./node_modules/.bin/slidev slides.md --port 3037 --remote --bind 0.0.0.0"
+    autostart: true
+    stop: SIGINT
+
+  build:
+    shell: "./node_modules/.bin/slidev build slides.md"
+    autostart: false
+
+  export:
+    shell: "./node_modules/.bin/slidev export slides.md --output slides.pdf"
+    autostart: false
+
+  shell:
+    shell: "bash"
+    autostart: false
